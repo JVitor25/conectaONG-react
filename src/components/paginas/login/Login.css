@@ -1,0 +1,26 @@
+:root {
+    --main-bg-color: #DFDFDF;
+}
+
+body{
+    background-color: var(--main-bg-color);
+}
+
+.text-decorator-none{
+    text-decoration: none !important;
+}
+
+.card{
+    background-color: white;
+    color: black;
+    width: 35%;
+    border-radius: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.botao{
+    border-color: black !important;
+    background-color: #57AFE6 !important;
+    color: black !important;
+}
