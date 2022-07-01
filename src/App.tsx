@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from "./components/paginas/login/Login";
-import Home from "./components/paginas/home/Home";
-import Sobre from "./components/paginas/sobre/Sobre";
+import Login from "./paginas/login/Login";
+import Home from "./paginas/home/Home";
+import Sobre from "./paginas/sobre/Sobre";
 import Footer from "./components/estaticos/footer/Footer";
 import Navbar from "./components/estaticos/navbar/Navbar";
 
