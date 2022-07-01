@@ -1,6 +1,12 @@
 .text-decoration-none {
     text-decoration: none;
 }
+
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+}
+
 .cursor {
     cursor: pointer;
     color: white;

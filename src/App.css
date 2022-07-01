@@ -38,5 +38,6 @@
 }
 
 .visualizacao{
-  height: calc(100vh - 228px);
+  /* height: calc(100vh - 228px); */
+  min-height: 100vh;
 }

@@ -15,11 +15,15 @@ export default function Navbar() {
                     </Box>
 
                     <Box display="flex" justifyContent="start" >
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Home
-                            </Typography>
-                        </Box>
+
+                        <Link to="/home" className='text-decoration-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Home
+                                </Typography>
+                            </Box>
+                        </Link>
+
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Posts
@@ -32,9 +36,17 @@ export default function Navbar() {
                         </Box>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                                Cadastrar tema
+                                Cadastrar Tema
                             </Typography>
                         </Box>
+                        <Link to="/sobre" className='text-decoration-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Sobre Nós
+                                </Typography>
+                            </Box>
+                        </Link>
+
                         <Link to='/login' className='text-decoration-none'>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h6" color="inherit">
