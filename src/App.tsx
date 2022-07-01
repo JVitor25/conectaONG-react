@@ -6,13 +6,11 @@ import Footer from "./components/estaticos/footer/Footer";
 import Navbar from "./components/estaticos/navbar/Navbar";
 
 export default function App() {
-  const navbarHeight = '48px';
-  const footerHeight = '180px';
-
+  
   return (
     <Router>
       <Navbar />
-      <div style={{ minHeight: `calc(100vh - ${navbarHeight} - ${footerHeight})` }}>
+      <div className="visualizacao">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />

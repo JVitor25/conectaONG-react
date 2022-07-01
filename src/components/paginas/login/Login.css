@@ -6,6 +6,17 @@ body{
     background-color: var(--main-bg-color);
 }
 
+.grid1{
+    height: calc(100vh - 228px);
+    direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.textos1{
+    font-weight: bold!important;
+}
+
 .text-decorator-none{
     text-decoration: none !important;
 }
@@ -17,6 +28,16 @@ body{
     border-radius: 25px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+.imagem{
+    display: flex;
+    background-image: url(https://altissia.org/wp-content/uploads/2021/01/Your-Logo-1.jpg);
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    background-position: center;
+    width: 35%;
+    height: 384.91px;
 }
 
 .botao{

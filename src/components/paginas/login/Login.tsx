@@ -10,11 +10,11 @@ function Login() {
 
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
-                <Grid alignItems="center" xs={6} container justifyContent="flex-end" >
+            <Grid container className="grid1">
+                <Grid xs={6} container justifyContent="flex-end" alignItems="center">
                     <Box paddingX={20} className="card">
                         <form>
-                            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ fontWeight: "bold" }}>Entrar</Typography>
+                            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="textos1">Entrar</Typography>
                             <TextField id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth />
                             <TextField id="senha" label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth />
                             <Box marginTop={2} textAlign="center">
@@ -27,18 +27,13 @@ function Login() {
                             <Box marginRight={1}>
                                 <Typography variant="subtitle1" gutterBottom align="center">Não tem uma conta?</Typography>
                             </Box>
-                            <Typography variant="subtitle1" gutterBottom align="center" style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
+                            <Typography variant="subtitle1" gutterBottom align="center" className="textos1">Cadastre-se</Typography>
                         </Box>
                     </Box>
                 </Grid>
-                <Grid xs={6} container>
-                    <Box style={{
-                    backgroundImage: `url(https://altissia.org/wp-content/uploads/2021/01/Your-Logo-1.jpg)`,
-                    backgroundRepeat: 'no-repeat',
-                    minHeight: '50vh', minWidth:'25vw',
-                    backgroundPosition: 'center'}}>
-                        
-                    </Box>
+                <Grid xs={6} container justifyContent="flex-start" alignItems="center">
+                    <Box paddingX={20} className="imagem">                                                          
+                    </Box>  
                 </Grid>
             </Grid >
         </>
