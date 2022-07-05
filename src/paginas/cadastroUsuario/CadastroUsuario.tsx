@@ -1,13 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import { Box } from '@mui/material';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import './CadastroUsuario.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { cadastroUsuario } from '../../services/Service';
 import User from '../../models/User';
+import './CadastroUsuario.css';
 
 function CadastroUsuario() {
-        let navigate = useNavigate();
-    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    let history = useNavigate();
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
             id: 0,
@@ -27,14 +28,14 @@ function CadastroUsuario() {
         })
 
     useEffect(() => {
-        if (userResult.id != 0) {
-            Navigate("/login")
+        if (userResult.id !== 0) {
+            history("/login")
             console.log(userResult)
         }
-    }, [userResult]) 
+    }, [userResult])
 
 
-    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
@@ -49,14 +50,14 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha == user.senha){
-        CadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuário cadastrado com sucesso')
-        }else{
+        if (confirmarSenha !== user.senha) {
+            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+            alert('Usuário cadastrado com sucesso')
+        } else {
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
     }
-    
+
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid item xs={6} className='imagem2'></Grid>
@@ -65,7 +66,7 @@ function CadastroUsuario() {
                     <form>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
                         <TextField id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
-                        <TextField id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth />
+                        <TextField id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
                         <TextField id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth />
                         <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
@@ -76,7 +77,7 @@ function CadastroUsuario() {
                                 </Button>
                             </Link>
                             <Button type='submit' variant='contained' color='primary'>
-                                    Cadastrar
+                                Cadastrar
                             </Button>
                         </Box>
                     </form>
