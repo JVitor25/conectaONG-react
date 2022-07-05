@@ -14,8 +14,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
-            senha: '',
-            foto: ''
+            senha: ''
         })
 
     const [userResult, setUserResult] = useState<User>(
@@ -23,8 +22,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
-            senha: '',
-            foto: ''
+            senha: ''
         })
 
     useEffect(() => {
@@ -50,7 +48,7 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha !== user.senha) {
+        if (confirmarSenha != user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
             alert('Usuário cadastrado com sucesso')
         } else {
@@ -70,7 +68,7 @@ function CadastroUsuario() {
 
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
 
-                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth />
+                        {/* <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth /> */}
 
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
 

@@ -51,11 +51,7 @@ function Login() {
                             <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth />
                             <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth />
                             <Box marginTop={2} textAlign="center">
-<<<<<<< HEAD
                                 <Button type="submit" variant="contained" className="botao">Logar</Button>
-=======
-                                    <Button type="submit" variant="contained" className="botao">Logar</Button>
->>>>>>> 1f5975e8aebb98f171b2f83232d595f38da900b4
                             </Box>
                         </form>
                         <Box display="flex" justifyContent="center" marginTop={2}>
