@@ -1,10 +1,62 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import { Box } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import './CadastroUsuario.css';
+import User from '../../models/User';
 
 function CadastroUsuario() {
+        let navigate = useNavigate();
+    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    const [user, setUser] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: ''
+        })
+
+    const [userResult, setUserResult] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: ''
+        })
+
+    useEffect(() => {
+        if (userResult.id != 0) {
+            Navigate("/login")
+            console.log(userResult)
+        }
+    }, [userResult]) 
+
+
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+        setConfirmarSenha(e.target.value)
+    }
+
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
+
+    }
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+        if(confirmarSenha == user.senha){
+        CadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+        alert('Usuário cadastrado com sucesso')
+        }else{
+            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+        }
+    }
+    
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid item xs={6} className='imagem2'></Grid>
