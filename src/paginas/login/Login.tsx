@@ -2,10 +2,10 @@ import React, { useState, useEffect, ChangeEvent } from "react";
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
 import UserLogin from "../../models/UserLogin";
 import "./Login.css";
+import useLocalStorage from "react-use-localstorage";
 
 
 function Login() {
@@ -52,9 +52,7 @@ function Login() {
                             <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth />
                             <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth />
                             <Box marginTop={2} textAlign="center">
-                                <Link to="/home" className="text-decorator-none">
                                     <Button type="submit" variant="contained" className="botao">Logar</Button>
-                                </Link>
                             </Box>
                         </form>
                         <Box display="flex" justifyContent="center" marginTop={2}>
