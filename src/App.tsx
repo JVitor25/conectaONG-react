@@ -5,6 +5,7 @@ import Home from "./paginas/home/Home";
 import Sobre from "./paginas/sobre/Sobre";
 import Footer from "./components/estaticos/footer/Footer";
 import Navbar from "./components/estaticos/navbar/Navbar";
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 export default function App() {
   
@@ -17,7 +18,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
-          {/* {<Route path="/cadastro" element={<CadastroUsuario />} />} */}
+          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
         </Routes>
       </div>
       <Footer />
