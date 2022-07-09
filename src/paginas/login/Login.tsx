@@ -45,8 +45,8 @@ function Login() {
     return (
         <>
             <Grid container className="container">
-                <Grid xs={6} container justifyContent="flex-end" alignItems="center">
-                    <Box paddingX={20} className="card">
+                <Grid xs={12} sm={6} container justifyContent="flex-end" alignItems="center">
+                    <Box paddingX={20} className="card1">
                         <form onSubmit={onSubmit}>
                             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="textos1">Entrar</Typography>
                             <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth />
@@ -55,7 +55,7 @@ function Login() {
                                 <Button type="submit" variant="contained" className="botao">Logar</Button>
                             </Box>
                         </form>
-                        <Box display="flex" justifyContent="center" marginTop={2}>
+                        <Box display="flex" justifyContent="center" marginTop={3}>
                             <Box marginRight={1}>
                                 <Typography variant="subtitle1" gutterBottom align="center">Não tem uma conta?</Typography>
                             </Box>
@@ -65,8 +65,9 @@ function Login() {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid xs={6} container justifyContent="flex-start" alignItems="center">
-                    <Box paddingX={20} className="imagem">
+                <Grid xs={12} sm={6} container justifyContent="flex-start" alignItems="center">
+                    <Box display="flex" className="card2">
+                        <img src="https://i.imgur.com/W5Ym7qV.png" alt="Logo" className="imagem"/>
                     </Box>
                 </Grid>
             </Grid >
