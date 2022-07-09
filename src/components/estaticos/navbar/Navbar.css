@@ -1,13 +1,29 @@
 .text-decoration-none {
-    text-decoration: none;
+    text-decoration: none !important;
+    margin-top: 7px;
+}
+
+.menuIcone{
+    text-decoration: none !important;
+    color: black !important;    
 }
 
 .toolbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .cursor {
     cursor: pointer;
     color: white;
+}
+
+.nomeHorizontal{
+    height: 38px;
+}
+
+.appbar{
+    background-color: #173B64 !important;
+    /* align-items: center; */
 }
