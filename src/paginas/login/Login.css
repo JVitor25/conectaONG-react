@@ -6,7 +6,7 @@ body{
     background-color: var(--main-bg-color);
 }
 
-.grid1{
+.container{
     /* height: calc(100vh - 228px); */
     min-height: 100vh;
     direction: row;

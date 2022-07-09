@@ -29,6 +29,7 @@ function Login() {
     useEffect(() => {
         if (token !== '') {
             history('/home')
+            // console.log(userLogin)
         }
     }, [token])
 
@@ -43,7 +44,7 @@ function Login() {
     }
     return (
         <>
-            <Grid container className="grid1">
+            <Grid container className="container">
                 <Grid xs={6} container justifyContent="flex-end" alignItems="center">
                     <Box paddingX={20} className="card">
                         <form onSubmit={onSubmit}>
