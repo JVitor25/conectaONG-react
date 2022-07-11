@@ -97,7 +97,7 @@ export default function CadastroPost() {
     }
 
     function back() {
-        navigate('/posts')
+        navigate('/postagens')
     }
 
     return (

@@ -27,9 +27,9 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
-            {/* <Route path="/sobre" element={<Sobre />} /> */}
+            <Route path="/sobre" element={<Sobre />} />
             <Route path="/tema" element={<ListaTema />} />
-            <Route path="/posts" element={<ListaPostagem />} />
+            <Route path="/postagens" element={<ListaPostagem />} />
             <Route path="/formularioPostagem" element={<CadastroPost />} />
             <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
             <Route path="/formularioTema" element={<CadastroTema />} />

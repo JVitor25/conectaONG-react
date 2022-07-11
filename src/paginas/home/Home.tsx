@@ -31,7 +31,7 @@ export default function Home() {
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "#254A61", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "#254A61", fontWeight: "bold" }}>Conheça algumas ONG's e Projetos Voluntários!</Typography>
                     </Box>
-                    <Link to="/posts">
+                    <Link to="/postagens">
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
