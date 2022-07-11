@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
+import User from "../../../models/User";
 import { buscar, buscarId, post, put } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 
@@ -15,41 +16,53 @@ export default function CadastroPost() {
         (state) => state.token
     );
 
-    useEffect(() => {
-        if (token === "") {
-            alert("Você precisa estar logado")
-            navigate("/login")
-        }
-    }, [token])
+    const userId = useSelector<TokenState, TokenState["id"]>(
+        (state) => state.id
+    );
 
-    const [tema, setTema] = useState<Tema>(
-        {
-            id: 0,
-            tema: ''
-        }
-    )
-
+    const [tema, setTema] = useState<Tema>({
+        id: 0,
+        tema: ''
+    });
+    
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
         mensagem: '',
         data: '',
-        tema: null
-    })
+        tema: null,
+        usuario: null
+    });
+    
+    const [usuario, setUsuario] = useState<User>({
+        id: +userId,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
+    });
+    
+    useEffect(() => {
+        if (token === "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+        }
+    }, [token]);
 
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
-    }, [tema])
+    }, [tema]);
 
     useEffect(() => {
         getTemas()
         if (id !== undefined) {
             findByIdPostagem(id)
         }
-    }, [id])
+    }, [id]);
 
     async function getTemas() {
         await buscar("/tema", setTemas, {

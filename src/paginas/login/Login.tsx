@@ -6,26 +6,35 @@ import { login } from "../../services/Service";
 import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/action";
+import { addId, addToken } from "../../store/tokens/action";
 
 function Login() {
     let navigate = useNavigate();
-    const [token, setToken] = useState('')
     const dispatch = useDispatch();
-    const [userLogin, setUserLogin] = useState<UserLogin>(
-        {
-            id: 0,
-            usuario: '',
-            senha: '',
-            token: ''
-        }
-    )
+    const [token, setToken] = useState('')
+    const [userLogin, setUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: "",
+        usuario: "",
+        foto: "",
+        senha: "",
+        token: "",
+    });
+
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: "",
+        usuario: "",
+        foto: "",
+        senha: "",
+        token: "",
+    });
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
         setUserLogin({
             ...userLogin,
             [e.target.name]: e.target.value
-        })
+        });
     }
 
     useEffect(() => {
@@ -33,14 +42,25 @@ function Login() {
             dispatch(addToken(token))
             navigate('/home')
         }
-    }, [token])
+    }, [token]);
+
+    useEffect(() => {
+        if (respUserLogin.token !== "") {
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))
+            navigate('/home')
+        }
+    }, [respUserLogin.token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
-        try{
-            await login(`usuarios/logar`, userLogin, setToken)
+        try {
+            await login(`usuarios/logar`, userLogin, setRespUserLogin)
             alert("Usuario logado com sucesso")
-        }catch(erro){
+        } catch (erro) {
             alert("Dados utilizados inconsistentes. Erro ao logar!")
         }
     }
@@ -69,7 +89,7 @@ function Login() {
                 </Grid>
                 <Grid xs={12} sm={6} container justifyContent="flex-start" alignItems="center">
                     <Box display="flex" className="card2">
-                        <img src="https://i.imgur.com/W5Ym7qV.png" alt="Logo" className="imagem"/>
+                        <img src="https://i.imgur.com/W5Ym7qV.png" alt="Logo" className="imagem" />
                     </Box>
                 </Grid>
             </Grid >

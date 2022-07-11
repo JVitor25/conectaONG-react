@@ -14,3 +14,18 @@
 .btnCancelar{
     margin-right: 20px !important;
 }
+
+.textos1{
+    font-weight: bold!important;
+    color: #173B64!important
+}
+
+.cardCadastro{
+    background-color: #ffffff;
+    color: black;
+    /* width: 35%; */
+    width: 400px;
+    height: 690px;
+    border-radius: 25px;
+    padding-top: 40px;
+}
