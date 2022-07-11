@@ -37,7 +37,7 @@ export default function Navbar() {
 
     var componentsNavbar;
     if (token !== "") {
-        componentsNavbar = <AppBar position="fixed" className="appbar">
+        componentsNavbar = <AppBar position="sticky" className="appbar">
             <Toolbar variant="dense" className="toolbar">
                 <Link to="/home">
                     <Box className="cursor" >
@@ -107,7 +107,11 @@ export default function Navbar() {
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>Minha Conta</MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <Typography variant="h6" color="inherit">
+                                        Minha Conta
+                                    </Typography>
+                                </MenuItem>
                                 <MenuItem onClick={handleClose} >
                                     <Typography variant="h6" color="inherit" onClick={goLogout}>
                                         Logout
@@ -119,8 +123,8 @@ export default function Navbar() {
                 </Box>
             </Toolbar>
         </AppBar>
-    }else {
-        
+    } else {
+
     }
 
     return (

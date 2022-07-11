@@ -14,6 +14,14 @@ export default function CadastroPost() {
     const token = useSelector<TokenState, TokenState["token"]>(
         (state) => state.token
     );
+
+    useEffect(() => {
+        if (token === "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+        }
+    }, [token])
+
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
@@ -28,11 +36,6 @@ export default function CadastroPost() {
         data: '',
         tema: null
     })
-
-    useEffect(() => {
-        alert("Login necessário para acessar")
-        navigate("/login")
-    }, [token])
 
     useEffect(() => {
         setPostagem({
@@ -57,7 +60,7 @@ export default function CadastroPost() {
     }
 
     async function findByIdPostagem(id: string) {
-        await buscarId(`postagens/${id}`, setPostagem, {
+        await buscarId(`postagem/${id}`, setPostagem, {
             headers: {
                 'Authorization': token
             }
@@ -78,14 +81,14 @@ export default function CadastroPost() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
+            put(`/postagem`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Postagem atualizada com sucesso');
         } else {
-            post(`/postagens`, postagem, setPostagem, {
+            post(`/postagem`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
@@ -106,10 +109,10 @@ export default function CadastroPost() {
                 <Typography variant="h3" color="textSecondary" component="h1" align="center">
                     Formulário de cadastro de Postagem
                 </Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.mensagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" name="titulo" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.mensagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="mensagem" label="mensagem" name="mensagem" variant="outlined" margin="normal" fullWidth />
 
-                <FormControl >
+                <FormControl fullWidth variant="filled">
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
