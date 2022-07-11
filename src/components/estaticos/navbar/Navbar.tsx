@@ -41,7 +41,7 @@ export default function Navbar() {
             <Toolbar variant="dense" className="toolbar">
                 <Link to="/home">
                     <Box className="cursor" >
-                        <img src="https://i.imgur.com/d0N3FeY.png " alt="Nome Horizontal" className="nomeHorizontal" />
+                        <img src="https://i.imgur.com/H31Qdmr.png" alt="Nome Horizontal" className="nomeHorizontal" />
                     </Box>
                 </Link>
                 <Box display="flex" justifyContent="start" >
