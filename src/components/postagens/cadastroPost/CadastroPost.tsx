@@ -17,14 +17,14 @@ export default function CadastroPost() {
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
-            descricao: ''
+            tema: ''
         }
     )
 
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
-        texto: '',
+        mensagem: '',
         data: '',
         tema: null
     })
@@ -107,7 +107,7 @@ export default function CadastroPost() {
                     Formulário de cadastro de Postagem
                 </Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.mensagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
@@ -121,7 +121,7 @@ export default function CadastroPost() {
                         })}>
                         {
                             temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                                <MenuItem value={tema.id}>{tema.tema}</MenuItem>
                             ))
                         }
                     </Select>

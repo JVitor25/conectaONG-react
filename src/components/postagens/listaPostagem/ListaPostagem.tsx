@@ -50,10 +50,10 @@ export default function ListaPostagem() {
                     {post.titulo}
                   </Typography>
                   <Typography variant="body2" component="p">
-                    {post.texto}
+                    {post.mensagem}
                   </Typography>
                   <Typography variant="body2" component="p">
-                    {post.tema?.descricao}
+                    {post.tema?.tema}
                   </Typography>
                 </CardContent>
                 <CardActions>

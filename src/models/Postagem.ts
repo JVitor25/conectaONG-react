@@ -3,9 +3,10 @@ import User from "./User";
 
 interface Postagem {
     id: number;
-    texto: string;
     titulo: string;
+    mensagem: string;
     data: string;
+    contato?: string | null;
     tema?: Tema | null;
     usuario?: User | null;
 }

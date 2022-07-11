@@ -1,5 +1,6 @@
-import { Button, makeStyles, Theme } from "@material-ui/core";
-import { Box, createStyles, Modal } from "@mui/material";
+import { Button } from "@material-ui/core";
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { Box, Modal } from "@mui/material";
 import React from "react";
 import CadastroPost from "../cadastroPost/CadastroPost";
 import CloseIcon from '@material-ui/icons/Close';
@@ -17,7 +18,7 @@ function getModalStyle() {
   
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-      paper: {
+        paper: {
         position: 'absolute',
         width: 400,
         backgroundColor: theme.palette.background.paper,
@@ -43,7 +44,7 @@ function getModalStyle() {
   
     const body = (
       <div style={modalStyle} 
-    //   className={classes.paper} Está dando erro por não achar o paper(???)
+      className={classes.paper}
     >
         <Box display="flex" justifyContent="flex-end" className="cursor">
           <CloseIcon onClick={handleClose}/>
