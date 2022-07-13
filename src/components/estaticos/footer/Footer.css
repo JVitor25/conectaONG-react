@@ -1,18 +1,22 @@
-.box1 {
-    background-color: #3F51B5;
-    height: 120px!important
+.text-decorator-none {
+    text-decoration: none;
 }
 
-.box2 {
-    background-color: #303F9F;
-    height: 60px!important
+.links-footer {
+    color: #173B64;
+    font-size: 15px;
 }
 
-.texto {
-    color: white
+.icons {
+    color: #173B64;
+    font-size: 45px !important;
 }
 
-.social {
-    font-size: 60px!important;
-    color: white
+.titulo-footer {
+    border-bottom-style: double;
+    border-color: #00bef0;
+}
+
+.footer {
+    padding: 20px 50px;
 }
