@@ -15,6 +15,7 @@ import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPosta
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import AtualizarUsuario from './paginas/atualizarUsuario/AtualizarUsuario';
+import Contato from './paginas/contato/Contato';
 
 export default function App() {
 
@@ -38,6 +39,7 @@ export default function App() {
             <Route path="/formularioTema/:id" element={<CadastroTema />} />
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
+            <Route path="/contato" element={<Contato />} />
           </Routes>
         </div>
         <Footer />
