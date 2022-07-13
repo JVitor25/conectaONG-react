@@ -20,7 +20,8 @@ function AtualizarUsuario() {
         nome: '',
         usuario: '',
         foto: '',
-        senha: ''
+        senha: '',
+        postagem: null
     });
 
     useEffect(() => {
@@ -46,11 +47,7 @@ function AtualizarUsuario() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        console.log(user.id);
-        console.log(user.nome);
-        console.log(user.foto);
-        console.log(user.usuario);
-        console.log(user.senha);
+        user.postagem= null
         if (confirmarSenha === user.senha) {
             put(`/usuarios/atualizar`, user, setUser, {
                 headers: {
@@ -61,12 +58,12 @@ function AtualizarUsuario() {
         } else {
             alert('As senhas estão diferentes!')
         }
-        // back()
+        back()
     }
 
-    // function back() {
-    //     navigate('/home')
-    // }
+    function back() {
+        navigate('/home')
+    }
 
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
