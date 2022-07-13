@@ -13,6 +13,11 @@ export default function Navbar() {
     const token = useSelector<TokenState, TokenState["token"]>(
         (state) => state.token
     );
+
+    const userId = useSelector<TokenState, TokenState["id"]>(
+        (state) => state.id
+    );
+
     const [auth, setAuth] = useState(true);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +39,9 @@ export default function Navbar() {
         navigate("/login")
     }
 
+    function goEditar() {
+        navigate(`/atualizarusuario/${userId}`)
+    } 
 
     var componentsNavbar;
     if (token !== "") {
@@ -108,8 +116,8 @@ export default function Navbar() {
                                 onClose={handleClose}
                             >
                                 <MenuItem onClick={handleClose}>
-                                    <Typography variant="h6" color="inherit">
-                                        Minha Conta
+                                    <Typography variant="h6" color="inherit" onClick={goEditar}>
+                                        Editar Perfil
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem onClick={handleClose} >

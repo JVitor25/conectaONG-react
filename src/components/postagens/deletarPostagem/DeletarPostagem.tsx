@@ -20,13 +20,13 @@ export default function DeletarPostagem() {
         alert("Você precisa estar logado")
         navigate("/login")
       }
-    }, [token])
+    }, [token]);
   
     useEffect(() => {
       if (id !== undefined) {
         findById(id)
       }
-    }, [id])
+    }, [id]);
   
     async function findById(id: string) {
       buscarId(`/postagem/${id}`, setPosts, {

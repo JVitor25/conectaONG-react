@@ -14,6 +14,7 @@ import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
+import AtualizarUsuario from './paginas/atualizarUsuario/AtualizarUsuario';
 
 export default function App() {
 
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+            <Route path="/atualizarusuario/:id" element={<AtualizarUsuario />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/tema" element={<ListaTema />} />
             <Route path="/postagens" element={<ListaPostagem />} />
