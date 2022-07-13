@@ -9,6 +9,7 @@ import { TokenState } from "../../../store/tokens/tokenReducer";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IconButton from '@mui/material/IconButton';
+import CreateIcon from '@mui/icons-material/Create';
 import "./ListaPostagems.css"
 
 export default function ListaPostagem() {
@@ -57,10 +58,15 @@ export default function ListaPostagem() {
                     <Grid item> 
                     <Typography color="textSecondary" gutterBottom>{post.usuario?.nome}</Typography> 
                     </Grid> 
-                    <Grid> 
+                    <Grid item> 
                       <Typography>Lorem | Ipsulun | XPTO | CrossFit</Typography>
                     </Grid>
-                  </Grid>
+                    <Grid container item xs={12}  justifyContent="flex-start" alignItems="flex-end">
+                    <IconButton> 
+                      <CreateIcon/> 
+                    </IconButton>
+                    </Grid>
+                    </Grid> 
                 </Grid>
                 <Typography variant="h5" component="h2">{post.titulo}</Typography>
                 <Typography variant="body2" component="p">{post.mensagem}</Typography>
