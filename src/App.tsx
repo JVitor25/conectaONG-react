@@ -18,6 +18,7 @@ import AtualizarUsuario from './paginas/atualizarUsuario/AtualizarUsuario';
 import Contato from './paginas/contato/Contato';
 import Feed from './paginas/feed/Feed';
 import PaginaInicial from './paginas/paginaInicial/PaginaInicial';
+
 export default function App() {
 
   return (
