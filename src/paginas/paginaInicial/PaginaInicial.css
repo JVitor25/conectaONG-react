@@ -20,7 +20,6 @@
     font-size: 50px !important;
     font-weight: bolder !important;
     color: rgb(255, 255, 255);
-    /* padding: 100px; */
 }
 
 .MuiGrid-spacing-xs-5>.MuiGrid-item {
@@ -31,12 +30,14 @@
 .grid-info {
     background-color: #2F6CB2;
     width: 100%!important;
-
+    margin: 0!important;
+    color: #e4e4e4;
 }
 
 .text-info {
     display: flex;
     align-self: center !important;
+    text-align: justify!important;
 }
 
 .imagem-info {
@@ -62,8 +63,10 @@
     color: aliceblue;
 }
 .tecnologias {
+    width: 100% !important;
+    justify-content: center!important;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around !important;
 }
 .cartao-tecnologia {
     align-self: center;
@@ -78,7 +81,11 @@
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin: 50px 50px!important;
+    margin: 50px 20px!important;
+}
+
+.valores {
+    justify-content: center!important;
 }
 .cartao-valores {
     align-self: center;
@@ -93,7 +100,7 @@
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin: 50px 0 !important;
+    margin: 50px 50px !important;
 }
 
 
@@ -128,6 +135,9 @@
     text-align: center;
     margin-top: 10px!important;
     font-weight: bold !important;
+}
+.texto-time {
+    text-align: justify;
 }
 
 .icones {

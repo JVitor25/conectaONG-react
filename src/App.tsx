@@ -16,11 +16,8 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import AtualizarUsuario from './paginas/atualizarUsuario/AtualizarUsuario';
 import Contato from './paginas/contato/Contato';
-<<<<<<< HEAD
 import Feed from './paginas/feed/Feed';
-=======
 import PaginaInicial from './paginas/paginaInicial/PaginaInicial';
->>>>>>> 0ad0a6a57a6cb94048f489127b7a6af994f7b849
 
 export default function App() {
 
