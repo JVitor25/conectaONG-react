@@ -1,31 +1,31 @@
-import React, {ChangeEvent, useEffect, useState} from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import Tema from '../../../models/Tema';
 import { buscarId, post, put } from '../../../services/Service';
-import { useNavigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function CadastroTema() {
     let navigate = useNavigate();
-    const { id } = useParams<{id: string}>();
-    const token = useSelector<TokenState, TokenState["token"]> (
+    const { id } = useParams<{ id: string }>();
+    const token = useSelector<TokenState, TokenState["token"]>(
         (state) => state.token
     );
     const [tema, setTema] = useState<Tema>({
         id: 0,
-        tema: ''
+        tema: '',
     })
 
     useEffect(() => {
-        if(token === "") {
+        if (token === "") {
             alert("Você precisa estar logado")
             navigate("/login")
         }
     }, [token])
 
-    useEffect(() =>{
-        if(id !== undefined) {
+    useEffect(() => {
+        if (id !== undefined) {
             findById(id)
         }
     }, [id])
@@ -40,7 +40,7 @@ function CadastroTema() {
 
     function updatedTema(e: ChangeEvent<HTMLInputElement>) {
         setTema({
-            ... tema,
+            ...tema,
             [e.target.name]: e.target.value,
         })
     }
@@ -49,8 +49,9 @@ function CadastroTema() {
         e.preventDefault()
         console.log("tema " + JSON.stringify(tema))
 
-        if(id !== undefined) {
+        if (id !== undefined) {
             console.log(tema)
+            tema.postagem=null
             put(`/tema`, tema, setTema, {
                 headers: {
                     'Authorization': token
@@ -68,7 +69,7 @@ function CadastroTema() {
         back()
     }
 
-    function back () {
+    function back() {
         navigate('/tema')
     }
 

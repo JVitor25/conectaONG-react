@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -43,68 +43,97 @@ export default function ListaPostagem() {
 
   return (
     <>
-      <Grid container>
-      <Grid item xs={4}></Grid>
-      <Grid item xs={4}>
-      { 
+        <Grid>
+          {
+            posts.map(post => (
+              <Box m={1} >
+                <Card variant="outlined">
+                  <CardContent>
+                    <Grid
+                      container
+                      direction="column"
+                      alignItems="stretch"
+                      spacing={1}
+                    >
+                      <Grid item
+                        container
+                        direction="row"
+                        spacing={2}
+                      >
+                        <Grid item>
+                          <Box marginLeft={1}>
+                            <Avatar
+                              variant="rounded"
+                              alt={post.usuario?.nome}
+                              src={post.usuario?.foto}
+                              sx={{ width: 90, height: 90 }}
+                            />
+                          </Box>
+                        </Grid>
+                        <Grid item xs>
+                          <Box display="flex" justifyContent="space-between">
+                            <Typography variant="h6">{post.usuario?.nome}</Typography>
+                            <IconButton>
+                              <CreateIcon
+                              />
+                            </IconButton>
+                          </Box>
+                          <Box>
+                            <Typography>Contato: {post.contato}</Typography>
+                          </Box>
+                          <Box>
+                            <Typography>Publicada no dia: {post.data}</Typography>
+                          </Box>
 
-        posts.map(post => (
-          <Box m={3} >
-            <Card variant="outlined">
-              <CardContent>
-                <Grid container>
-                  <Grid item xs={2}><img className="profileImg" src="https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png" alt="" /> </Grid>
-                  <Grid item container xs={4}> 
-                    <Grid item> 
-                    <Typography color="textSecondary" gutterBottom>{post.usuario?.nome}</Typography> 
-                    </Grid> 
-                    <Grid item> 
-                      <Typography>Lorem | Ipsulun | XPTO | CrossFit</Typography>
-                    </Grid>
-                    <Grid container item xs={12}  justifyContent="flex-start" alignItems="flex-end">
-                    <IconButton> 
-                      <CreateIcon/> 
-                    </IconButton>
-                    </Grid>
-                    </Grid> 
-                </Grid>
-                <Typography variant="h5" component="h2">{post.titulo}</Typography>
-                <Typography variant="body2" component="p">{post.mensagem}</Typography>
-                <Typography variant="body2" component="p">{post.tema?.tema}</Typography>
-                <Typography variant="body1" component="p"> </Typography>
-              </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
+                        </Grid>
+                      </Grid>
+                      <Grid item >
+                        <Box sx={{ textAlign: 'justify', m: 1 }}>
+                          <Typography variant="h5" component="h2">{post.titulo}</Typography>
+                          <Typography variant="body2" component="p">{post.mensagem}</Typography>
+                          <Box display="flex" justifyContent="space-between" sx={{ paddingTop: 1, fontStyle: "italic", fontWeight: "bold" }}>Tema: {post.tema?.tema}
+                            {/* <Typography variant="body1" component="h3" ></Typography> */}
+                            <IconButton color="error">
+                              <FavoriteBorderIcon />
+                            </IconButton>
+                          </Box>
+                        </Box>
 
-                  <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
-                      </Button>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                  {/*
+                  <CardActions>
+                    <Box display="flex" justifyContent="center" mb={1.5}>
+
+                      <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                        <Box mx={1}>
+                          <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                            atualizar
+                          </Button>
+                        </Box>
+                      </Link>
+                      <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                        <Box mx={1}>
+                          <Button variant="contained" size='small' color="secondary">
+                            deletar
+                          </Button>
+                        </Box>
+                      </Link>
+                      <Box mx={1}>
+                         <IconButton color="error">
+                          <FavoriteBorderIcon />
+                        </IconButton> 
+              </Box>
                     </Box>
-                  </Link>
-                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Box mx={1}>
-                      <IconButton color="error">
-                        <FavoriteBorderIcon/>
-                      </IconButton>
-                    </Box>
-                </Box>
-              </CardActions>
-            </Card>
-          </Box>
-          
-        ))
-      }
-      </Grid>
-      <Grid item xs={4}></Grid>
-      </Grid>
+      </CardActions>
+      */}
+                </Card>
+              </Box >
+
+            ))
+          }
+        </Grid >
     </>
   )
 }

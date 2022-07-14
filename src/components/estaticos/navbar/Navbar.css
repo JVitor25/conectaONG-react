@@ -16,14 +16,18 @@
 
 .cursor {
     cursor: pointer;
-    color: white;
+    color: white !important;
 }
 
 .nomeHorizontal{
-    height: 38px;
+    height: 38px !important;
 }
 
 .appbar{
     background-color: #173B64 !important;
     /* align-items: center; */
+}
+
+Avatar{
+    
 }

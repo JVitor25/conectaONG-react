@@ -16,6 +16,7 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import AtualizarUsuario from './paginas/atualizarUsuario/AtualizarUsuario';
 import Contato from './paginas/contato/Contato';
+import Feed from './paginas/feed/Feed';
 
 export default function App() {
 
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
             <Route path="/atualizarusuario/:id" element={<AtualizarUsuario />} />
             <Route path="/sobre" element={<Sobre />} />
+            <Route path="/feed" element={<Feed />} />
             <Route path="/tema" element={<ListaTema />} />
             <Route path="/postagens" element={<ListaPostagem />} />
             <Route path="/formularioPostagem" element={<CadastroPost />} />

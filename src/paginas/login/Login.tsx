@@ -46,12 +46,11 @@ function Login() {
 
     useEffect(() => {
         if (respUserLogin.token !== "") {
-            console.log("Token: " + respUserLogin.token)
-            console.log("ID: " + respUserLogin.id)
-
+            // console.log("Token: " + respUserLogin.token)
+            // console.log("ID: " + respUserLogin.id)
             dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))
-            navigate('/home')
+            navigate('/feed')
         }
     }, [respUserLogin.token])
 

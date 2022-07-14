@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from "react";
-import { Box } from "@mui/material";
+import { ChangeEvent, useEffect, useState } from "react";
+import { Box, Avatar } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography, AppBar, Toolbar, IconButton, Menu, MenuItem } from "@material-ui/core";
 import "./Navbar.css"
@@ -7,6 +7,8 @@ import { AccountCircle } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { addToken } from "../../../store/tokens/action";
+import { buscarId } from "../../../services/Service";
+import User from "../../../models/User";
 
 
 export default function Navbar() {
@@ -17,6 +19,33 @@ export default function Navbar() {
     const userId = useSelector<TokenState, TokenState["id"]>(
         (state) => state.id
     );
+
+    const [user, setUser] = useState<User>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        foto: '',
+        senha: '',
+        postagem: null
+    });
+
+    useEffect(() => {
+        if (userId !== undefined) {
+            findById(userId)
+        }
+    }, [userId]);
+
+    async function findById(id: string) {
+        buscarId(`/usuarios/${userId}`, setUser, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    var fotoPerfil = user.foto;
+    console.log(fotoPerfil);
+    console.log(user.foto);
 
     const [auth, setAuth] = useState(true);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -41,7 +70,7 @@ export default function Navbar() {
 
     function goEditar() {
         navigate(`/atualizarusuario/${userId}`)
-    } 
+    }
 
     var componentsNavbar;
     if (token !== "") {
@@ -92,13 +121,19 @@ export default function Navbar() {
                     {auth && (
                         <div>
                             <IconButton
+                                // size="small"
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                                 onClick={handleMenu}
                                 color="inherit"
                             >
-                                <AccountCircle />
+                                {/* <Avatar
+                                    alt={user.nome}
+                                    src={user.foto}
+                                    sx={{ width: 40, height: 40 }}
+                                /> */}
+                                 <AccountCircle />
                             </IconButton>
                             <Menu
                                 id="menu-appbar"
