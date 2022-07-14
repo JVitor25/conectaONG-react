@@ -7,7 +7,7 @@ import User from '../../models/User';
 import './CadastroUsuario.css';
 
 function CadastroUsuario() {
-    let history = useNavigate();
+    let navigate = useNavigate();
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>({
         id: 0,
@@ -27,23 +27,19 @@ function CadastroUsuario() {
 
     useEffect(() => {
         if (userResult.id !== 0) {
-            history("/login")
+            navigate("/login")
         }
     }, [userResult])
-
 
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
-
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
-
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -60,6 +56,7 @@ function CadastroUsuario() {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
     };
+
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid item alignItems='center' >

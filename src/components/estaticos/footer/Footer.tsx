@@ -45,17 +45,17 @@ export default function Footer() {
                             FAQ
                         </Typography>
                     </Link>
-                    <Link to='' className='text-decorator-none links-footer'>
+                    <Link to='/contato' className='text-decorator-none links-footer'>
                         <Typography variant='h6' component='h6' color='inherit'>
                             Contato
                         </Typography>
                     </Link>
-                    <Link to='' className='text-decorator-none links-footer'>
+                    <Link to='/login' className='text-decorator-none links-footer'>
                         <Typography variant='h6' component='h6' color='inherit'>
                             Login
                         </Typography>
                     </Link>
-                    <Link to='' className='text-decorator-none links-footer'>
+                    <Link to='/cadastrousuario' className='text-decorator-none links-footer'>
                         <Typography variant='h6' component='h6' color='inherit'>
                             Cadastro
                         </Typography>
@@ -84,9 +84,9 @@ export default function Footer() {
                             David Lucas Mendes
                         </Typography>
                     </a>
-                    <a href='' className='text-decorator-none links-footer' target='_blank'>
+                    <a href='https://www.linkedin.com/in/gmendeslopes/' className='text-decorator-none links-footer' target='_blank'>
                         <Typography variant='h6' component='h6' color='inherit'>
-                            Gabriel Mendes - GITHUB
+                            Gabriel Mendes
                         </Typography>
                     </a>
                     <a href='' className='text-decorator-none links-footer' target='_blank'>

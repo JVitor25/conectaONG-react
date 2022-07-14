@@ -1,0 +1,13 @@
+.titulo{
+    font-weight: bold !important;
+    color: #173B64 !important;
+}
+
+.cardContato{
+    background-color: #ffffff;
+    color: black;
+    width: 400px;
+    height: 550px;
+    border-radius: 25px;
+    padding-top: 40px;
+}
