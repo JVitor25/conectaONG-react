@@ -14,6 +14,7 @@ import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
+import PaginaInicial from './paginas/paginaInicial/PaginaInicial';
 
 export default function App() {
 
@@ -23,7 +24,7 @@ export default function App() {
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<PaginaInicial />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />

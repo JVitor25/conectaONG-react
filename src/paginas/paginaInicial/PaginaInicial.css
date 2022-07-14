@@ -1,0 +1,142 @@
+.bg-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #173b64 !important;
+    width: 100%;
+    height: 400px;
+}
+
+.subtitulos {
+    text-align: center;
+    font-size: 5vh!important;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif!important;
+    color: #2F6CB2;
+    margin: 50px!important;
+}
+
+.titulo-pagina {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: 50px !important;
+    font-weight: bolder !important;
+    color: rgb(255, 255, 255);
+    /* padding: 100px; */
+}
+
+.MuiGrid-spacing-xs-5>.MuiGrid-item {
+    padding: 20px;
+    align-self: center;
+}
+
+.grid-info {
+    background-color: #2F6CB2;
+    width: 100%!important;
+
+}
+
+.text-info {
+    display: flex;
+    align-self: center !important;
+}
+
+.imagem-info {
+    height: 200px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-around;
+}
+.cartao-time {
+    align-self: center;
+    padding: 50px 25px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    background-color: #173B64 !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 50px 0!important;
+    color: aliceblue;
+}
+.tecnologias {
+    display: flex;
+    justify-content: space-around;
+}
+.cartao-tecnologia {
+    align-self: center;
+    padding: 50px 25px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    background-color: #2F6CB2 !important;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 50px 50px!important;
+}
+.cartao-valores {
+    align-self: center;
+    padding: 50px 25px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    background-color: #2F6CB2 !important;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 50px 0 !important;
+}
+
+
+.cartao-tecnologia:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.5);
+}
+
+.cartao-time:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.5);
+}
+
+
+
+.foto-time {
+    height: 150px;
+    border-radius: 50%;
+    border: #00BEF0 solid 5px;
+}
+.foto-tecnologia {
+    height: 150px;
+}
+
+.zoom {
+    transition: transform .5s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.nome-time {
+    text-align: center;
+    margin-top: 10px!important;
+    font-weight: bold !important;
+}
+
+.icones {
+    font-size: 50px!important;
+    color: aliceblue;
+}
+
+.texto {
+    color: #e4e4e4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: 2em!important;
+}
