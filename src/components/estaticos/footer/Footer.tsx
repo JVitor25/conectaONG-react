@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { Grid, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography } from '@material-ui/core';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 

@@ -1,3 +1,4 @@
+
 .bg-titulo {
     display: flex;
     align-items: center;
@@ -32,6 +33,7 @@
     width: 100%!important;
     margin: 0!important;
     color: #e4e4e4;
+    text-align: center !important;
 }
 
 .text-info {
@@ -41,7 +43,7 @@
 }
 
 .imagem-info {
-    height: 200px;
+    height: 400px;
 }
 
 .time-info {
@@ -117,7 +119,8 @@
 .foto-time {
     height: 150px;
     border-radius: 50%;
-    border: #00BEF0 solid 5px;
+    border: #3E8CE8 solid 5px;
+    background-color: #00BEF0;
 }
 .foto-tecnologia {
     height: 150px;

@@ -1,14 +1,21 @@
 // Componentes react:
 import { AppBar, Grid, Toolbar, Typography } from "@material-ui/core";
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, Slider } from "@mui/material";
 import { Link } from "react-router-dom";
+
 // Icones:
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GithubIcon from '@material-ui/icons/GitHub';
+
+// Imagens:
+import joaoLima from '../../components/imagens/joaoLima.png';
+import humanos from '../../components/imagens/humanos.png';
+
 // CSS:
 import "./PaginaInicial.css";
 
 export default function PaginaInicial() {
+
     return (
         <>
             <AppBar position="sticky" className="appbar">
@@ -99,7 +106,7 @@ export default function PaginaInicial() {
                         </Typography>
                     </Grid>
                     <Grid item md={6} xs={12}>
-                        <img src="https://images.pexels.com/photos/12739401/pexels-photo-12739401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagem-info" />
+                        <img src={humanos} alt="" className="imagem-info" />
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <img src="https://images.pexels.com/photos/12739401/pexels-photo-12739401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagem-info" />
@@ -284,7 +291,8 @@ export default function PaginaInicial() {
                     </Grid>
                     <Grid item md={2} className="cartao-time" >
                         <Box>
-                            <img src="https://avatars.githubusercontent.com/u/100228980?v=4" alt="" className="foto-time zoom" />
+                            <img src={joaoLima} alt="" className="foto-time zoom"/>
+                            {/* <img src="https://avatars.githubusercontent.com/u/100228980?v=4" alt="" className="foto-time zoom" /> */}
                             <Typography className="nome-time">
                                 João Lima
                             </Typography>
@@ -300,7 +308,7 @@ export default function PaginaInicial() {
                     </Grid>
                     <Grid item md={2} className="cartao-time" >
                         <Box>
-                            <img src="https://thumbs.dreamstime.com/b/emblema-profissional-do-logotipo-vetor-moderno-para-o-crossfit-108326327.jpg" alt="" className="foto-time zoom" />
+                            <img src="https://c.tenor.com/nEsdZ0qa6QcAAAAd/dog.gif" alt="" className="foto-time zoom" />
                             <Typography className="nome-time">
                                 Matheus Chaves
                             </Typography>
