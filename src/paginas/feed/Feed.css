@@ -1,0 +1,22 @@
+.appbarLateral {
+    border-radius: 10px;
+    background-color: #173B64 !important;
+}
+
+.appbarLateral2 {
+    border-radius: 10px;
+    background-color: #173B64 !important;
+    position: sticky;
+    top: 70px;
+    left: 8000px;
+}
+
+.Teste1 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1em 0;
+}

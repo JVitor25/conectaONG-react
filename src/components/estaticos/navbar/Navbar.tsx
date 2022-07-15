@@ -43,9 +43,9 @@ export default function Navbar() {
         })
     }
 
-    var fotoPerfil = user.foto;
-    console.log(fotoPerfil);
-    console.log(user.foto);
+    // var fotoPerfil = user.foto;
+    // console.log(fotoPerfil);
+    // console.log(user.foto);
 
     const [auth, setAuth] = useState(true);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -74,7 +74,7 @@ export default function Navbar() {
 
     var componentsNavbar;
     if (token !== "") {
-        componentsNavbar = <AppBar position="sticky" className="appbar">
+        componentsNavbar = <AppBar position="static" className="appbar">
             <Toolbar variant="dense" className="toolbar">
                 <Link to="/home">
                     <Box className="cursor" >

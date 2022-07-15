@@ -43,97 +43,96 @@ export default function ListaPostagem() {
 
   return (
     <>
-        <Grid>
-          {
-            posts.map(post => (
-              <Box m={1} >
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid
+      <Grid>
+        {
+          posts.map(post => (
+            <Box m={1} >
+              <Card variant="outlined">
+                <CardContent>
+                  <Grid
+                    container
+                    direction="column"
+                    alignItems="stretch"
+                    spacing={1}
+                  >
+                    <Grid item
                       container
-                      direction="column"
-                      alignItems="stretch"
-                      spacing={1}
+                      direction="row"
+                      spacing={2}
                     >
-                      <Grid item
-                        container
-                        direction="row"
-                        spacing={2}
-                      >
-                        <Grid item>
-                          <Box marginLeft={1}>
-                            <Avatar
-                              variant="rounded"
-                              alt={post.usuario?.nome}
-                              src={post.usuario?.foto}
-                              sx={{ width: 90, height: 90 }}
-                            />
-                          </Box>
-                        </Grid>
-                        <Grid item xs>
-                          <Box display="flex" justifyContent="space-between">
-                            <Typography variant="h6">{post.usuario?.nome}</Typography>
-                            <IconButton>
-                              <CreateIcon
-                              />
-                            </IconButton>
-                          </Box>
-                          <Box>
-                            <Typography>Contato: {post.contato}</Typography>
-                          </Box>
-                          <Box>
-                            <Typography>Publicada no dia: {post.data}</Typography>
-                          </Box>
-
-                        </Grid>
+                      <Grid item>
+                        <Box marginLeft={1}>
+                          <Avatar
+                            //variant="rounded"
+                            alt={post.usuario?.nome}
+                            src={post.usuario?.foto}
+                            sx={{ width: 90, height: 90 }}
+                          />
+                        </Box>
                       </Grid>
-                      <Grid item >
-                        <Box sx={{ textAlign: 'justify', m: 1 }}>
-                          <Typography variant="h5" component="h2">{post.titulo}</Typography>
-                          <Typography variant="body2" component="p">{post.mensagem}</Typography>
-                          <Box display="flex" justifyContent="space-between" sx={{ paddingTop: 1, fontStyle: "italic", fontWeight: "bold" }}>Tema: {post.tema?.tema}
-                            {/* <Typography variant="body1" component="h3" ></Typography> */}
-                            <IconButton color="error">
-                              <FavoriteBorderIcon />
-                            </IconButton>
-                          </Box>
+                      <Grid item xs>
+                        <Box display="flex" justifyContent="space-between">
+                          <Typography variant="h6">{post.usuario?.nome}</Typography>
+                          <IconButton>
+                            <CreateIcon
+                            />
+                          </IconButton>
+                        </Box>
+                        <Box>
+                          <Typography>Contato: {post.contato}</Typography>
+                        </Box>
+                        <Box>
+                          <Typography>Publicada no dia: {post.data}</Typography>
                         </Box>
 
                       </Grid>
                     </Grid>
-                  </CardContent>
-                  {/*
-                  <CardActions>
-                    <Box display="flex" justifyContent="center" mb={1.5}>
+                    <Grid item >
+                      <Box sx={{ textAlign: 'justify', m: 1 }}>
+                        <Typography variant="h5" component="h2">{post.titulo}</Typography>
+                        <Typography variant="body2" component="p">{post.mensagem}</Typography>
+                        <Box display="flex" justifyContent="space-between" sx={{ paddingTop: 1, fontStyle: "italic", fontWeight: "bold" }}>Tema: {post.tema?.tema}
+                          {/* <Typography variant="body1" component="h3" ></Typography> */}
+                          <IconButton color="error">
+                            <FavoriteBorderIcon />
+                          </IconButton>
+                        </Box>
+                      </Box>
 
-                      <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                        <Box mx={1}>
-                          <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                            atualizar
-                          </Button>
-                        </Box>
-                      </Link>
-                      <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                        <Box mx={1}>
-                          <Button variant="contained" size='small' color="secondary">
-                            deletar
-                          </Button>
-                        </Box>
-                      </Link>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+
+                <CardActions>
+                  <Box display="flex" justifyContent="center" mb={1.5}>
+
+                    <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                       <Box mx={1}>
-                         <IconButton color="error">
-                          <FavoriteBorderIcon />
-                        </IconButton> 
-              </Box>
+                        <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                          atualizar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                      <Box mx={1}>
+                        <Button variant="contained" size='small' color="secondary">
+                          deletar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Box mx={1}>
+                      <IconButton color="error">
+                        <FavoriteBorderIcon />
+                      </IconButton>
                     </Box>
-      </CardActions>
-      */}
-                </Card>
-              </Box >
+                  </Box>
+                </CardActions>
+              </Card>
+            </Box >
 
-            ))
-          }
-        </Grid >
+          ))
+        }
+      </Grid >
     </>
   )
 }
