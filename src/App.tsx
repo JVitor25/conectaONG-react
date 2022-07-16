@@ -29,7 +29,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<PaginaInicial />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
+            {/* <Route path="/home" element={<Home />} /> */}
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
             <Route path="/atualizarusuario/:id" element={<AtualizarUsuario />} />
             <Route path="/sobre" element={<Sobre />} />

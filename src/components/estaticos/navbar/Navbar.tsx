@@ -1,14 +1,17 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { Box, Avatar } from "@mui/material";
+import { Box, Avatar, Grid, IconButton } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { Typography, AppBar, Toolbar, IconButton, Menu, MenuItem, Grid } from "@material-ui/core";
+import { Typography, AppBar, Toolbar, Menu, MenuItem } from "@material-ui/core";
 import "./Navbar.css"
 import { AccountCircle } from "@material-ui/icons";
+import InfoIcon from '@mui/icons-material/Info';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { addToken } from "../../../store/tokens/action";
 import { buscarId } from "../../../services/Service";
 import User from "../../../models/User";
+import { Home } from "@mui/icons-material";
 
 
 export default function Navbar() {
@@ -84,23 +87,33 @@ export default function Navbar() {
                 <Box display="flex" justifyContent="start" >
                     <Link to="/feed" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Home
+                            <Typography className="line0" variant="h6" color="inherit">
+                                <Grid className="navBarItem" container >
+                                    <Grid container item direction={"column"} alignItems={"center"}>
+                                        <Grid item > <Home className="navBarIcon"/> </Grid>
+                                        <Grid item className="navBarTxt"> Home </Grid>
+                                    </Grid>
+                                </Grid>
                             </Typography>
                         </Box>
                     </Link>
-                    <Link to="/home" className="text-decoration-none">
+                    {/* <Link to="/home" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
                                 HomeAntiga
                             </Typography>
                         </Box>
-                    </Link>
+                    </Link> */}
 
                     <Link to="/postagens" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Postagens
+                            <Typography className="line0" variant="h6" color="inherit">
+                            <Grid className="navBarItem" container >
+                                    <Grid container item direction={"column"} alignItems={"center"}>
+                                        <Grid item > <LibraryBooksIcon className="navBarIcon"/> </Grid>
+                                        <Grid item className="navBarTxt"> Postagens </Grid>
+                                    </Grid>
+                                </Grid>
                             </Typography>
                         </Box>
                     </Link>
@@ -120,8 +133,13 @@ export default function Navbar() {
                     </Link> */}
                     <Link to="/sobre" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Sobre Nós
+                            <Typography className="line0" variant="h6" color="inherit">
+                            <Grid className="navBarItem" container >
+                                    <Grid container item direction={"column"} alignItems={"center"}>
+                                        <Grid item > <InfoIcon className="navBarIcon"/> </Grid>
+                                        <Grid item className="navBarTxt"> Sobre nós </Grid>
+                                    </Grid>
+                                </Grid>
                             </Typography>
                         </Box>
                     </Link>
@@ -129,7 +147,7 @@ export default function Navbar() {
                     {auth && (
                         <div>
                             <IconButton
-                                // size="small"
+                                size="large"
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"

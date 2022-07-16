@@ -1,12 +1,15 @@
 import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
 import User from "../../../models/User";
 import { buscar, buscarId, post, put } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
+import ReactDOM from 'react-dom';
+import Feed from "../../../paginas/feed/Feed";
+import App from "../../../App";
 
 export default function CadastroPost() {
     let navigate = useNavigate();
@@ -24,16 +27,17 @@ export default function CadastroPost() {
         id: 0,
         tema: ''
     });
-    
+
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
         mensagem: '',
         data: '',
+        contato: null,
         tema: null,
         usuario: null
     });
-    
+
     const [usuario, setUsuario] = useState<User>({
         id: +userId,
         nome: '',
@@ -41,7 +45,7 @@ export default function CadastroPost() {
         senha: '',
         foto: ''
     });
-    
+
     useEffect(() => {
         if (token === "") {
             alert("Você precisa estar logado")
@@ -109,12 +113,19 @@ export default function CadastroPost() {
             })
             alert('Postagem cadastrada com sucesso');
         }
-        back()
 
     }
 
     function back() {
-        navigate('/feed')
+        // ReactDOM.render(
+        //     <App />,
+        //     document.getElementById('root')
+        // );
+        // navigate('/home')
+    }
+
+    function refreshPage() {
+        window.location.reload();
     }
 
     return (
@@ -125,6 +136,7 @@ export default function CadastroPost() {
                 </Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" name="titulo" variant="outlined" margin="normal" fullWidth />
                 <TextField value={postagem.mensagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="mensagem" label="mensagem" name="mensagem" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="contato" name="contato" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl fullWidth variant="filled">
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
