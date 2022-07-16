@@ -142,16 +142,7 @@ function Feed() {
                                     <Box className="boxDaToolBar">
                                         <Button size="small" onClick={() => setValueView("1")} className="botaoMenu">Minhas Postagens</Button>
                                         <Button size="small" onClick={() => setValueView("2")} className="botaoMenu">Explorar</Button>
-                                        {/* <Button size="small" className="botaoMenu">Temas:</Button> */}
                                         <Box sx={{ margin: 1 }}> <Divider /></Box>
-                                        {/* {temas.map(tema => ( 
-                                                <form onSubmit={onSubmit}>
-                                                <Button onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} type="submit" size="small" onClick={() => setValueView("3")} className="botaoMenu">
-                                                    {tema.tema}
-                                                </Button>
-                                                <Button size="small" onClick={() => setValueView("3")} className="botaoMenu">
-                                                    {tema.tema}
-                                                </Button>*/}
                                         <Box sx={{ width: "100%" }}>
                                             <FormControl fullWidth variant="standard" >
                                                 <InputLabel sx={{ fontSize: 14 }} id="demo-simple-select-helper-label">Temas:</InputLabel>
@@ -244,9 +235,7 @@ function Feed() {
                                                 </CardContent>
                                             </Card>
                                         </Box >
-
-                                    ))
-                                    }
+                                    ))}
                                 </Grid >
                             </TabPanel>
                         </TabContext>
