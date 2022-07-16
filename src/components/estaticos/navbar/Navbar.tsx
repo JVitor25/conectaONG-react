@@ -74,21 +74,29 @@ export default function Navbar() {
 
     var componentsNavbar;
     if (token !== "") {
-        componentsNavbar = <AppBar position="static" className="appbar">
+        componentsNavbar = <AppBar position="sticky" className="appbar">
             <Toolbar variant="dense" className="toolbar">
-                <Link to="/home">
+                <Link to="/feed">
                     <Box className="cursor" >
                         <img src="https://i.imgur.com/H31Qdmr.png" alt="Nome Horizontal" className="nomeHorizontal" />
                     </Box>
                 </Link>
                 <Box display="flex" justifyContent="start" >
-                    <Link to="/home" className="text-decoration-none">
+                    <Link to="/feed" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
                                 Home
                             </Typography>
                         </Box>
                     </Link>
+                    <Link to="/home" className="text-decoration-none">
+                        <Box mx={1.5} className="cursor">
+                            <Typography variant="h6" color="inherit">
+                                HomeAntiga
+                            </Typography>
+                        </Box>
+                    </Link>
+
                     <Link to="/postagens" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
@@ -96,7 +104,7 @@ export default function Navbar() {
                             </Typography>
                         </Box>
                     </Link>
-                    <Link to="/tema" className="text-decoration-none">
+                    {/*<Link to="/tema" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
                                 Temas
@@ -109,7 +117,7 @@ export default function Navbar() {
                                 Cadastrar Tema
                             </Typography>
                         </Box>
-                    </Link>
+                    </Link> */}
                     <Link to="/sobre" className="text-decoration-none">
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
@@ -133,7 +141,7 @@ export default function Navbar() {
                                     src={user.foto}
                                     sx={{ width: 40, height: 40 }}
                                 /> */}
-                                 <AccountCircle />
+                                <AccountCircle />
                             </IconButton>
                             <Menu
                                 id="menu-appbar"

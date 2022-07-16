@@ -101,6 +101,7 @@ export default function CadastroPost() {
             })
             alert('Postagem atualizada com sucesso');
         } else {
+            console.log(postagem)
             post(`/postagem`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
@@ -113,7 +114,7 @@ export default function CadastroPost() {
     }
 
     function back() {
-        navigate('/postagens')
+        navigate('/feed')
     }
 
     return (

@@ -54,7 +54,7 @@ function AtualizarUsuario() {
                 }
             })
             alert('Usuário atualizado com sucesso')
-            navigate('/home')
+            navigate('/feed')
         } else {
             alert('As senhas estão diferentes!')
         }
@@ -105,7 +105,7 @@ function AtualizarUsuario() {
                                 </FormControl>
                             </Box>
                             <Box marginTop={2} textAlign='center'>
-                                <Link to='/home' className='text-decorator-none'>
+                                <Link to="/feed" className='text-decorator-none'>
                                     <Button variant='contained' color='secondary' className='btnCancelar'>
                                         Cancelar
                                     </Button>
