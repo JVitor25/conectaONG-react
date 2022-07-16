@@ -20,10 +20,31 @@
 }
 
 .nomeHorizontal{
-    height: 38px !important;
+    height: 50px !important;
 }
 
 .appbar{
     background-color: #173B64 !important;
     /* align-items: center; */
+}
+
+.navBarItem :hover
+{
+ color: #E0E0E0;
+}
+
+.navBarIcon{
+    font-size: xx-large !important;
+}
+
+.line0{
+    line-height: 1.1!important;
+}
+
+.navBarTxt{
+    padding-bottom: 10%;
+}
+
+.avatarIcon{
+    font-size: 200% !important;
 }
