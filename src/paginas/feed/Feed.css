@@ -64,14 +64,22 @@
 
 .text-decoration-noneFeed {
     text-decoration: none !important;
+    padding: 0;
 }
 
-.boxTemas{
-    width: 100%;
-}
-
-.Divider{
-    color:black;
+.Divider {
+    color: black;
     border: 100px !important;
     border-width: 10px !important;
+}
+
+.boxCriarPostagem {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
 }

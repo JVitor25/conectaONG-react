@@ -1,5 +1,5 @@
 import { AppBar, Button, Divider, FormControl, Grid, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
-import { Avatar, InputLabel, Box, FormHelperText } from '@mui/material';
+import { Avatar, InputLabel, Box, FormHelperText, ButtonBase } from '@mui/material';
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,6 +11,8 @@ import { TokenState } from '../../store/tokens/tokenReducer';
 import "./Feed.css";
 import { TabContext, TabPanel } from '@material-ui/lab';
 import MinhasPostagens from '../../components/postagens/minhasPostagens/MinhasPostagens';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+
 
 function Feed() {
     const [temas, setTemas] = useState<Tema[]>([])
@@ -38,7 +40,7 @@ function Feed() {
     // function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
     //     setValue(newValue);
     // }
-    
+
     async function getTema() {
         await buscar("/tema", setTemas, {
             headers: {
@@ -79,6 +81,7 @@ function Feed() {
     function goEditar() {
         navigate(`/atualizarusuario/${userId}`)
     }
+
     // async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     //     buscarId(`/tema/${idPostagem}`, setUser, {
     //         headers: {
@@ -145,7 +148,7 @@ function Feed() {
                                                 <Button size="small" onClick={() => setValueView("3")} className="botaoMenu">
                                                     {tema.tema}
                                                 </Button>*/}
-                                            <Box className="boxTemas">
+                                            <Box sx={{width:"100%"}}>
                                                 <FormControl fullWidth variant="standard" >
                                                     <InputLabel sx={{ fontSize: 14 }} id="demo-simple-select-helper-label">Temas:</InputLabel>
                                                     <Select
@@ -157,8 +160,8 @@ function Feed() {
                                                             }
                                                         })}>
                                                         {temas.map(tema => (
-                                                            <MenuItem value={tema.id} onClick={() => setValueView("2")} >
-                                                                <Box display="flex" sx={{ maxWidth: 340, whiteSpace: "normal", textAlign: "justify", fontWeight: 500}} >
+                                                            <MenuItem value={tema.id} onClick={() => setValueView("3")} >
+                                                                <Box display="flex" sx={{ maxWidth: 340, whiteSpace: "normal", textAlign: "justify", fontWeight: 500 }} >
                                                                     {tema.tema}
                                                                 </Box>
                                                             </MenuItem>
@@ -187,6 +190,8 @@ function Feed() {
                     </Grid>
                 </Grid>
                 <Grid xs={4}>
+                    <ModalPostagem />
+                    <Box sx={{ margin: 1.5 }}> <Divider /></Box>
                     <TabContext value={valueView}>
                         <TabPanel value="1" className="tabPanel">
                             <MinhasPostagens />

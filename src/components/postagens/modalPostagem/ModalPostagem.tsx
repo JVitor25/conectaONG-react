@@ -1,9 +1,18 @@
-import { Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Box, Modal } from "@mui/material";
-import React from "react";
+import { Avatar, Box, ButtonBase, Modal } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import CadastroPost from "../cadastroPost/CadastroPost";
 import CloseIcon from '@material-ui/icons/Close';
+import "./ModalPostagem.css";
+import WallpaperIcon from '@mui/icons-material/Wallpaper';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import AddReactionIcon from '@mui/icons-material/AddReaction';
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokenReducer";
+import User from "../../../models/User";
+import { buscarId } from "../../../services/Service";
+import { useNavigate } from "react-router-dom";
 
 function getModalStyle() {
   const top = 50;
@@ -30,6 +39,40 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function ModalPostagem() {
+  let navigate = useNavigate();
+
+  function editTemas() {
+    navigate(`/tema`)
+  }
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  );
+  const userId = useSelector<TokenState, TokenState["id"]>(
+    (state) => state.id
+  );
+
+  const [user, setUser] = useState<User>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    foto: '',
+    senha: '',
+    postagem: null
+  });
+
+  useEffect(() => {
+    if (userId !== undefined) {
+      findById(userId)
+    }
+  }, [userId]);
+
+  async function findById(id: string) {
+    buscarId(`/usuarios/${userId}`, setUser, {
+      headers: {
+        'Authorization': token
+      }
+    })
+  }
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
@@ -58,19 +101,104 @@ function ModalPostagem() {
 
   return (
     <div>
-      <Button
-        variant="outlined"
-        className="btnModal"
-        onClick={handleOpen}>Nova Postagem</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        {body}
-      </Modal>
-    </div>
+      <Box className="boxCriarPostagem">
+        <Grid
+          container
+          direction="column"
+          alignItems="stretch"
+          spacing={3}
+          xs={12}
+        >
+          <Grid
+            item
+            container
+            direction="row"
+          >
+            <Grid
+              item
+              container
+              justifyContent="center"
+              xs={2}>
+              <Avatar
+                alt={user.nome}
+                src={user.foto}
+                sx={{ width: 45, height: 45 }}
+              />
+            </Grid>
+            <Grid
+              item
+              container
+              justifyContent="center"
+              alignItems="stretch"
+              xs>
+              <ButtonBase
+                className="btnModal"
+                onClick={handleOpen}>
+
+                <Box className="boxModalPostagem">
+                  Publicar postagem
+                </Box>
+              </ButtonBase>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+              >
+                {body}
+              </Modal>
+            </Grid>
+          </Grid>
+          <Grid
+            item
+            container
+            direction="row"
+          >
+            <Grid
+              item
+              container
+              justifyContent="center"
+              xs={3}>
+              <ButtonBase className="botDaPostagem">
+                <WallpaperIcon fontSize="medium" />
+                Foto
+              </ButtonBase>
+            </Grid>
+            <Grid
+              item
+              container
+              justifyContent="center"
+              xs={2}>
+              <ButtonBase className="botDaPostagem">
+                <YouTubeIcon fontSize="medium" />
+                Video
+              </ButtonBase>
+            </Grid>
+
+            <Grid
+              item
+              container
+              justifyContent="center"
+              xs={3}>
+              <ButtonBase className="botDaPostagem">
+                <AddReactionIcon fontSize="medium" />
+                Reação
+              </ButtonBase>
+            </Grid>
+            <Grid
+              item
+              container
+              justifyContent="center"
+              xs={4}>
+              <ButtonBase onClick={editTemas} className="botDaPostagem" >
+                Gerenciar Temas
+              </ButtonBase>
+            </Grid>
+
+          </Grid>
+        </Grid>
+      </Box>
+    </div >
   );
 }
 
