@@ -9,14 +9,17 @@ import GithubIcon from '@material-ui/icons/GitHub';
 
 // Imagens:
 import joaoLima from '../../components/imagens/joaoLima.png';
-import humanos from '../../components/imagens/humanos.png';
+import humanos from '../../components/imagens/conversa.png';
 import joaoLucas from '../../components/imagens/joaoLucas.png';
-import pessoa3d from '../../components/imagens/pessoa3d.png';
+import mulher from '../../components/imagens/mulher.png';
 import mui from '../../components/imagens/mui.png';
 import react from '../../components/imagens/react.png';
 import java from '../../components/imagens/JAVA.png';
 import spring from '../../components/imagens/SPRINGBOOT.png';
 import matheus from '../../components/imagens/matheus.png';
+import valores from '../../components/imagens/valores.png';
+import missao from '../../components/imagens/missao.png';
+import visao from '../../components/imagens/visao.png';
 
 // CSS:
 import "./PaginaInicial.css";
@@ -91,7 +94,7 @@ export default function PaginaInicial() {
                         </Grid>
                         <Grid item xs={7}>
                             <Typography className="texto">
-                                A ConectaONG é a rede social que tem como objetivo combater as desigualdades por meio do auxilio à |||| A alta desigualdade na distribuição de renda no Brasil é um problema que aflige grande parte da população. Este fator se torna muito visível quando analisamos o coeficiente de Gini - indice utilizado para aferir a desigualdade econômica de um determinado local. De acordo com o último levantamento desse indice realizado em 2019, o Brasil encontra-se na 9ª colocação mundial integralizando o grupo de países que possuem maiores desigualdades e concentrações de renda.
+                                A ConectaONG é a rede social que tem como objetivo combater as desigualdades por meio do auxilio às ONG's. A alta desigualdade na distribuição de renda no Brasil é um problema que aflige grande parte da população. Este fator se torna muito visível quando analisamos o coeficiente de Gini - indice utilizado para aferir a desigualdade econômica de um determinado local. De acordo com o último levantamento desse indice realizado em 2019, o Brasil encontra-se na 9ª colocação mundial integralizando o grupo de países que possuem maiores desigualdades e concentrações de renda.
                             </Typography>
                         </Grid>
                     </Paper>
@@ -108,11 +111,11 @@ export default function PaginaInicial() {
                     </Grid>
 
                     <Grid item md={6} xs={12}>
-                        <img src={pessoa3d} alt="" className="imagem-info" />
+                        <img src={mulher} alt="" className="imagem-info" />
                     </Grid>
 
                     <Grid item md={6} xs={12}>
-                        <img src="https://images.pexels.com/photos/12739401/pexels-photo-12739401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="imagem-info" />
+                        <img src={humanos} alt="" className="imagem-info" />
                     </Grid>
                     <Grid item md={6} xs={12}>
                         <Typography className="texto">
@@ -133,9 +136,9 @@ export default function PaginaInicial() {
                             Visão
                         </Typography>
                         <Box>
-                            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="" className="foto-tecnologia zoom" />
+                            <img src={visao} alt="" className="foto-tecnologia zoom" />
                         </Box>
-                        <Typography>
+                        <Typography className="txt-valores">
                             é uma boa pergunta
                         </Typography>
                     </Grid>
@@ -144,10 +147,10 @@ export default function PaginaInicial() {
                             Missão
                         </Typography>
                         <Box>
-                            <img src="https://cdn-icons-png.flaticon.com/512/102/102349.png" alt="" className="foto-tecnologia zoom" />
+                            <img src={missao} alt="" className="foto-tecnologia zoom" />
                         </Box>
-                        <Typography>
-                            o que poderiamos
+                        <Typography className="txt-valores">
+                            A nossa missão é diminuir as desigualdades no Brasil promovendo um ambiente que facilite o encontro entre pessoas que necessitam de ajuda e ONG's que possam lhe ajudar, além de facilitar também o contato das instituições com empresas parceiras.
                         </Typography>
                     </Grid>
                     <Grid item md={3} className="cartao-valores" >
@@ -155,9 +158,9 @@ export default function PaginaInicial() {
                             Valores
                         </Typography>
                         <Box>
-                            <img src="https://cdn-icons-png.flaticon.com/512/2285/2285606.png" alt="" className="foto-tecnologia zoom" />
+                            <img src={valores} alt="" className="foto-tecnologia zoom" />
                         </Box>
-                        <Typography>
+                        <Typography className="txt-valores">
                             nesse tópico
                         </Typography>
                     </Grid>

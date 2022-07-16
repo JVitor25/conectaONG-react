@@ -46,7 +46,7 @@
 }
 
 .imagem-info {
-    height: 400px;
+    height: 100%;
 }
 
 .time-info {
@@ -172,9 +172,20 @@
 a {
     text-decoration: none;
     color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
 }
 
 a:hover {
     transition:  0.3s ease;
     color: #173B64;
+}
+
+.txt-valores {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: 1.3em !important;
+    text-align: justify;
+}
+
+.icon-valores {
+    color: white;
 }
