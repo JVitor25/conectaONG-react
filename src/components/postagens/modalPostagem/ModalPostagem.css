@@ -20,7 +20,18 @@
     margin-bottom: 1px;
 }
 
-.botModalPostagem{
+.botaoModalPostagem{
     width: 100%;;
     background-color: white;
+}
+
+.boxCriarPostagem {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
 }

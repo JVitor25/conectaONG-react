@@ -2,14 +2,7 @@
     border-radius: 10px;
     background-color: #f9f9f9!important;
     padding: 0px;
-}
-
-.appbarLateral2 {
-    border-radius: 10px;
-    background-color: #f9f9f9 !important;
-    position: sticky;
-    top: 70px;
-    left: 8000px;
+    margin-top: 15px;
 }
 
 .boxDaToolBar {
@@ -43,7 +36,7 @@
 
 .gridUsuario {
     position: sticky !important;
-    top: 50px !important;
+    top: 45px !important;
 }
 
 .tabPanel {
@@ -71,15 +64,4 @@
     color: black;
     border: 100px !important;
     border-width: 10px !important;
-}
-
-.boxCriarPostagem {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    justify-content: space-between;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 15px;
 }

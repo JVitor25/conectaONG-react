@@ -1,5 +1,5 @@
-import { AppBar, Button, Divider, FormControl, Grid, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
-import { Avatar, InputLabel, Box, FormHelperText, ButtonBase } from '@mui/material';
+import { AppBar, Button, Checkbox, Divider, FormControl, Grid, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
+import { Avatar, InputLabel, Box, FormHelperText, ButtonBase, Card, CardContent } from '@mui/material';
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,17 +8,20 @@ import Tema from '../../models/Tema';
 import User from '../../models/User';
 import { buscar, buscarId } from '../../services/Service';
 import { TokenState } from '../../store/tokens/tokenReducer';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import "./Feed.css";
 import { TabContext, TabPanel } from '@material-ui/lab';
 import MinhasPostagens from '../../components/postagens/minhasPostagens/MinhasPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
-
+import iconeAnuncio from "../../components/imagens/iconeAnuncio.png";
 
 function Feed() {
     const [temas, setTemas] = useState<Tema[]>([])
-    const [tema, setTema] = useState<Tema>({
+    const [tema, setTema] = useState<Tema | any>({
         id: 0,
-        tema: ''
+        tema: '',
+        postagem: null
     });
     const [valueView, setValueView] = useState('2')
     // const { id } = useParams<{ id: string }>();
@@ -89,7 +92,9 @@ function Feed() {
     //         }
     //     })
     // }
-
+    useEffect(() => {
+        console.log(tema)
+    }, [tema]);
     return (
         <>
             <Grid container xs={12}>
@@ -132,15 +137,14 @@ function Feed() {
                             </Box>
                         </Grid>
                         <Grid item className="gridUsuario" >
-                            <Box className="cardUsuario2">
-                                <AppBar position="static" className="appbarLateral">
-                                    <Toolbar variant="dense" className="toolbarUsuario2">
-                                        <Box className="boxDaToolBar">
-                                            <Button size="small" onClick={() => setValueView("1")} className="botaoMenu">Minhas Postagens</Button>
-                                            <Button size="small" onClick={() => setValueView("2")} className="botaoMenu">Explorar</Button>
-                                            {/* <Button size="small" className="botaoMenu">Temas:</Button> */}
-                                            <Box sx={{ margin: 1 }}> <Divider /></Box>
-                                            {/* {temas.map(tema => ( 
+                            <AppBar position="static" className="appbarLateral">
+                                <Toolbar variant="dense" className="toolbarUsuario2">
+                                    <Box className="boxDaToolBar">
+                                        <Button size="small" onClick={() => setValueView("1")} className="botaoMenu">Minhas Postagens</Button>
+                                        <Button size="small" onClick={() => setValueView("2")} className="botaoMenu">Explorar</Button>
+                                        {/* <Button size="small" className="botaoMenu">Temas:</Button> */}
+                                        <Box sx={{ margin: 1 }}> <Divider /></Box>
+                                        {/* {temas.map(tema => ( 
                                                 <form onSubmit={onSubmit}>
                                                 <Button onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} type="submit" size="small" onClick={() => setValueView("3")} className="botaoMenu">
                                                     {tema.tema}
@@ -148,62 +152,106 @@ function Feed() {
                                                 <Button size="small" onClick={() => setValueView("3")} className="botaoMenu">
                                                     {tema.tema}
                                                 </Button>*/}
-                                            <Box sx={{width:"100%"}}>
-                                                <FormControl fullWidth variant="standard" >
-                                                    <InputLabel sx={{ fontSize: 14 }} id="demo-simple-select-helper-label">Temas:</InputLabel>
-                                                    <Select
-                                                        labelId="demo-simple-select-helper-label"
-                                                        id="demo-simple-select-helper"
-                                                        onChange={(e) => buscarId(`/tema/${e.target.value}`, setTema, {
-                                                            headers: {
-                                                                'Authorization': token
-                                                            }
-                                                        })}>
-                                                        {temas.map(tema => (
-                                                            <MenuItem value={tema.id} onClick={() => setValueView("3")} >
-                                                                <Box display="flex" sx={{ maxWidth: 340, whiteSpace: "normal", textAlign: "justify", fontWeight: 500 }} >
-                                                                    {tema.tema}
-                                                                </Box>
-                                                            </MenuItem>
-                                                        ))}
-                                                    </Select>
-                                                    <FormHelperText sx={{ fontSize: 14 }}>Filtre as postagens por temas </FormHelperText>
-                                                </FormControl>
-                                            </Box>
-                                            {/* </form>
-
-                                             ))} */}
+                                        <Box sx={{ width: "100%" }}>
+                                            <FormControl fullWidth variant="standard" >
+                                                <InputLabel sx={{ fontSize: 14 }} id="demo-simple-select-helper-label">Temas:</InputLabel>
+                                                <Select
+                                                    labelId="demo-simple-select-helper-label"
+                                                    id="demo-simple-select-helper"
+                                                    onChange={(e) => buscarId(`/tema/${e.target.value}`, setTema, {
+                                                        headers: {
+                                                            'Authorization': token
+                                                        }
+                                                    })}>
+                                                    {temas.map(tema => (
+                                                        <MenuItem value={tema.id} onClick={() => setValueView("3")} >
+                                                            <Box display="flex" sx={{ maxWidth: 340, whiteSpace: "normal", textAlign: "justify", fontWeight: 500 }} >
+                                                                {tema.tema}
+                                                            </Box>
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                                <FormHelperText sx={{ fontSize: 14 }}>Filtre as postagens por temas </FormHelperText>
+                                            </FormControl>
                                         </Box>
-                                        {/* <Box sx={{ fontSize: 18, borderTopStyle: "double", p: 1 }}>
-                                            <Link to="/tema" className="text-decoration-none">
-                                                <Box sx={{ color: "black" }}>
-                                                    <Typography>
-                                                        Gerenciar Temas
-                                                    </Typography>
-                                                </Box>
-                                            </Link>
-                                        </Box> */}
-                                    </Toolbar>
-                                </AppBar>
-                            </Box>
+                                    </Box>
+                                </Toolbar>
+                            </AppBar>
                         </Grid>
                     </Grid>
                 </Grid>
                 <Grid xs={4}>
-                    <ModalPostagem />
-                    <Box sx={{ margin: 1.5 }}> <Divider /></Box>
-                    <TabContext value={valueView}>
-                        <TabPanel value="1" className="tabPanel">
-                            <MinhasPostagens />
-                        </TabPanel>
-                        <TabPanel value="2" className="tabPanel">
-                            <ListaPostagem />
-                        </TabPanel>
-                        <TabPanel value="3" className="tabPanel">
+                    <Box sx={{ margin: 1 }}>
+                        <ModalPostagem />
+                        <Box sx={{ margin: 1.5 }}> <Divider /></Box>
+                        <TabContext value={valueView}>
+                            <TabPanel value="1" className="tabPanel">
+                                <MinhasPostagens />
+                            </TabPanel>
+                            <TabPanel value="2" className="tabPanel">
+                                <ListaPostagem />
+                            </TabPanel>
+                            <TabPanel value="3" className="tabPanel">
+                                <Grid container direction="column-reverse">
+                                    {tema.postagem?.map((post: any) => (
+                                        <Box>
+                                            <Card variant="outlined" className="postagensFeed">
+                                                <CardContent>
+                                                    <Grid
+                                                        item
+                                                        container
+                                                        direction="column"
+                                                        alignItems="stretch"
+                                                        spacing={1}
+                                                    >
+                                                        <Grid item
+                                                            container
+                                                            direction="row"
+                                                            spacing={2}
+                                                        >
+                                                            <Grid item>
+                                                                <Box marginLeft={1}>
+                                                                    <Avatar
+                                                                        alt={post.usuario?.nome}
+                                                                        src={post.usuario?.foto}
+                                                                        sx={{ width: 72, height: 72 }}
+                                                                    />
+                                                                </Box>
+                                                            </Grid>
+                                                            <Grid item xs>
+                                                                <Box display="flex" justifyContent="space-between">
+                                                                    <Typography variant="h6">{user.nome}</Typography>
+                                                                </Box>
+                                                                <Box>
+                                                                    <Typography>Contato: {post.contato}</Typography>
+                                                                </Box>
+                                                                <Box>
+                                                                    <Typography>Publicada no dia: {new Date(post.data).toLocaleDateString()}</Typography>
+                                                                </Box>
 
-                        </TabPanel>
-                    </TabContext>
-                </Grid>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid item >
+                                                            <Box sx={{ textAlign: 'justify', m: 1 }}>
+                                                                <Typography variant="h5" component="h2">{post.titulo}</Typography>
+                                                                <Typography variant="body2" component="p">{post.mensagem}</Typography>
+                                                                <Box display="flex" justifyContent="space-between" sx={{ paddingTop: 1, fontStyle: "italic", fontWeight: "bold" }}>Tema: {tema.tema}
+                                                                    <Checkbox icon={<FavoriteBorderIcon color="error" />} checkedIcon={< FavoriteIcon color="error" />} />
+                                                                </Box>
+                                                            </Box>
+                                                        </Grid>
+                                                    </Grid>
+                                                </CardContent>
+                                            </Card>
+                                        </Box >
+
+                                    ))
+                                    }
+                                </Grid >
+                            </TabPanel>
+                        </TabContext>
+                    </Box>
+                </Grid >
                 <Grid
                     item
                     container
@@ -238,7 +286,7 @@ function Feed() {
                                                     </Box>
                                                 </Box>
                                             </a>
-
+                                            <Box sx={{ width: "100%", margin: 1 }}><Divider /></Box>
                                             <a href='https://portalagita.com.br/instituto-ramacrisna-e-eleita-uma-das-melhores-ongs-do-mundo/'
                                                 target="_blank"
                                                 className="text-decoration-noneFeed"
@@ -252,6 +300,17 @@ function Feed() {
                                                     </Box>
                                                 </Box>
                                             </a>
+                                            <Box sx={{ width: "100%", margin: 1 }}><Divider /></Box>
+                                            <Link to='/contato' className='text-decorator-none'>
+                                                <Box display="flex" flexDirection="row" alignItems="center" marginTop={2}>
+                                                    <Box className="botaoMenu">
+                                                        Divilgue aqui seus projetos!
+                                                    </Box>
+                                                    <Box paddingLeft={2}>
+                                                        <img className="imagensNoticias" src={iconeAnuncio} alt="Imagem do Instituto Ramacrisna" />
+                                                    </Box>
+                                                </Box>
+                                            </Link>
                                         </Box>
                                     </Toolbar>
                                 </AppBar>
@@ -260,7 +319,7 @@ function Feed() {
                     </Grid>
                     <Grid item xs={4}></Grid>
                 </Grid>
-            </Grid>
+            </Grid >
         </>
     )
 }
