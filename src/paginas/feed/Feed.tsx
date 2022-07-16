@@ -220,7 +220,7 @@ function Feed() {
                                                             </Grid>
                                                             <Grid item xs>
                                                                 <Box display="flex" justifyContent="space-between">
-                                                                    <Typography variant="h6">{user.nome}</Typography>
+                                                                    <Typography variant="h6">{post.usuario?.nome}</Typography>
                                                                 </Box>
                                                                 <Box>
                                                                     <Typography>Contato: {post.contato}</Typography>
