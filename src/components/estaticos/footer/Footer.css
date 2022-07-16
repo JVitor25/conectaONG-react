@@ -12,6 +12,11 @@
     font-size: 45px !important;
 }
 
+.github-icon {
+    color: #173B64;
+    font-size: 35px !important;
+}
+
 .titulo-footer {
     border-bottom-style: double;
     border-color: #00bef0;

@@ -252,8 +252,8 @@ export default function PaginaInicial() {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </Typography>
 
-                        <Box>
-                            <a href="https://github.com/davidlucas25" target='blank'><GithubIcon className="icones zoom" /></a>
+                        <Box className="box">
+                            <a href="https://github.com/davidlucas25" target='blank'><GithubIcon className="github-icone zoom" /></a>
                             <a href="https://www.linkedin.com/in/david-lucas-mendes-92b755231/" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
@@ -268,9 +268,9 @@ export default function PaginaInicial() {
                         <Typography className="texto-time">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
                         </Typography>
-                        <Box>
-                            <a href="https://github.com/GabrielMendes94" target='blank'><GithubIcon className="icones zoom" /></a>
-                            <a href="" target='blank'><LinkedInIcon className="icones zoom" /></a>
+                        <Box className="box">
+                            <a href="https://github.com/GabrielMendes94" target='blank'><GithubIcon className="github-icone zoom" /></a>
+                            <a href="https://www.linkedin.com/in/gmendeslopes/" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
                     <Grid item md={2} className="cartao-time" >
@@ -284,8 +284,8 @@ export default function PaginaInicial() {
                         <Typography className="texto-time">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
                         </Typography>
-                        <Box>
-                            <a href="https://github.com/joaolmb" target='blank'><GithubIcon className="icones zoom" /></a>
+                        <Box className="box">
+                            <a href="https://github.com/joaolmb" target='blank'><GithubIcon className="github-icone zoom" /></a>
                             <a href="https://www.linkedin.com/in/joaolmb/" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
@@ -301,8 +301,8 @@ export default function PaginaInicial() {
                         <Typography className="texto-time">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
                         </Typography>
-                        <Box>
-                            <a href="https://github.com/JVitor25" target='blank'><GithubIcon className="icones zoom" /></a>
+                        <Box className="box">
+                            <a href="https://github.com/JVitor25" target='blank'><GithubIcon className="github-icone zoom" /></a>
                             <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-lima25/" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
@@ -317,8 +317,8 @@ export default function PaginaInicial() {
                         <Typography className="texto-time">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
                         </Typography>
-                        <Box>
-                            <a href="https://github.com/xMoogle" target='blank'><GithubIcon className="icones zoom" /></a>
+                        <Box className="box">
+                            <a href="https://github.com/xMoogle" target='blank'><GithubIcon className="github-icone zoom" /></a>
                             <a href="https://www.linkedin.com/in/matheus-chaves-amaro-284993239/" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
@@ -333,8 +333,8 @@ export default function PaginaInicial() {
                         <Typography className="texto-time">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
                         </Typography>
-                        <Box>
-                            <a href="https://github.com/silvoncio" target='blank'><GithubIcon className="icones zoom" /></a>
+                        <Box className="box">
+                            <a href="https://github.com/silvoncio" target='blank'><GithubIcon className="github-icone zoom" /></a>
                             <a href="" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
