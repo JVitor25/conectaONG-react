@@ -159,7 +159,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={3}>
-              <ButtonBase className="botDaPostagem">
+              <ButtonBase className="botaoDaPostagem">
                 <WallpaperIcon fontSize="medium" />
                 Foto
               </ButtonBase>
@@ -169,7 +169,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={2}>
-              <ButtonBase className="botDaPostagem">
+              <ButtonBase className="botaoDaPostagem">
                 <YouTubeIcon fontSize="medium" />
                 Video
               </ButtonBase>
@@ -180,7 +180,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={3}>
-              <ButtonBase className="botDaPostagem">
+              <ButtonBase className="botaoDaPostagem">
                 <AddReactionIcon fontSize="medium" />
                 Reação
               </ButtonBase>
@@ -190,7 +190,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={4}>
-              <ButtonBase onClick={editTemas} className="botDaPostagem" >
+              <ButtonBase onClick={editTemas} className="botaoDaPostagem" >
                 Gerenciar Temas
               </ButtonBase>
             </Grid>
