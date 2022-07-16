@@ -109,7 +109,7 @@ export default function Footer() {
                                 <LinkedInIcon className='icons' />
                             </a>
                             <a href='' target='_blank'>
-                                <GithubIcon className='icons' />
+                                <GithubIcon className='github-icon' />
                             </a>
                         </Box>
                 </Grid>

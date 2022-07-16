@@ -150,6 +150,17 @@
     color: aliceblue;
 }
 
+.github-icone {
+    font-size: 37.5px!important;
+    color: aliceblue;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .texto {
     color: #e4e4e4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;

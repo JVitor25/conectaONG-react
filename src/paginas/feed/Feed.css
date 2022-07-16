@@ -1,12 +1,12 @@
 .appbarLateral {
     border-radius: 10px;
-    background-color: #D0EEFF !important;
+    background-color: #f9f9f9!important;
     padding: 0px;
 }
 
 .appbarLateral2 {
     border-radius: 10px;
-    background-color: #173B64 !important;
+    background-color: #f9f9f9 !important;
     position: sticky;
     top: 70px;
     left: 8000px;

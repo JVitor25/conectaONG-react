@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
-import { Box, Avatar } from "@mui/material";
+import { Box, Avatar, Checkbox } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import CreateIcon from '@mui/icons-material/Create';
 import "./MinhasPostagens.css"
 import User from "../../../models/User";
+import { CheckBox, Favorite, FavoriteBorder, Label } from "@material-ui/icons";
 
 export default function MinhasPostagens() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -129,12 +130,9 @@ export default function MinhasPostagens() {
                       <Typography variant="h5" component="h2">{post.titulo}</Typography>
                       <Typography variant="body2" component="p">{post.mensagem}</Typography>
                       <Box display="flex" justifyContent="space-between" sx={{ paddingTop: 1, fontStyle: "italic", fontWeight: "bold" }}>Tema: {post.tema?.tema}
-                        <IconButton color="error">
-                          <FavoriteBorderIcon />
-                        </IconButton>
+                        <Checkbox  icon={<FavoriteBorderIcon color="error"/>} checkedIcon={< FavoriteIcon color="error"/>}/>
                       </Box>
                     </Box>
-
                   </Grid>
                 </Grid>
               </CardContent>
