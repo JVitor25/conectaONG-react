@@ -6,6 +6,7 @@
     background-color: #173b64 !important;
     width: 100%;
     height: 400px;
+    padding: 50px 0;
 }
 
 .subtitulos {
@@ -17,8 +18,9 @@
 }
 
 .titulo-pagina {
+    text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-    font-size: 50px !important;
+    font-size: 4em !important;
     font-weight: bolder !important;
     color: rgb(255, 255, 255);
 }
@@ -40,6 +42,7 @@
     display: flex;
     align-self: center !important;
     text-align: justify!important;
+    margin: 0 150px !important;
 }
 
 .imagem-info {
@@ -117,8 +120,8 @@
 .foto-time {
     height: 150px;
     border-radius: 50%;
-    border: #3E8CE8 solid 5px;
-    background-color: #00BEF0;
+    border: #ffffff solid 5px;
+    background-color: #2F6CB2;
 }
 .foto-tecnologia {
     height: 150px;
@@ -137,6 +140,7 @@
     margin-top: 10px!important;
     font-weight: bold !important;
 }
+
 .texto-time {
     text-align: justify;
 }
@@ -150,4 +154,16 @@
     color: #e4e4e4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
     font-size: 2em!important;
+    margin: 0 50px !important;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    transition:  0.3s ease;
+    color: #173B64;
 }
