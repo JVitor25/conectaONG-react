@@ -7,6 +7,9 @@ import Tema from "../../../models/Tema";
 import User from "../../../models/User";
 import { buscar, buscarId, post, put } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
+import ReactDOM from 'react-dom';
+import Feed from "../../../paginas/feed/Feed";
+import App from "../../../App";
 
 export default function CadastroPost() {
     let navigate = useNavigate();
@@ -110,13 +113,15 @@ export default function CadastroPost() {
             })
             alert('Postagem cadastrada com sucesso');
         }
-        back()
 
     }
 
     function back() {
-        document.getElementById('root')
-        navigate('/home')
+        // ReactDOM.render(
+        //     <App />,
+        //     document.getElementById('root')
+        // );
+        // navigate('/home')
     }
 
     function refreshPage() {
@@ -150,7 +155,7 @@ export default function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary" onClick={back}>
+                    <Button type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>
                 </FormControl>

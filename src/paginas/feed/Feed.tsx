@@ -15,6 +15,8 @@ import { TabContext, TabPanel } from '@material-ui/lab';
 import MinhasPostagens from '../../components/postagens/minhasPostagens/MinhasPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import iconeAnuncio from "../../components/imagens/iconeAnuncio.png";
+import ReactDOM from 'react-dom';
+import App from '../../App';
 
 function Feed() {
     const [temas, setTemas] = useState<Tema[]>([])
@@ -84,6 +86,14 @@ function Feed() {
     function goEditar() {
         navigate(`/atualizarusuario/${userId}`)
     }
+
+    // function back() {
+    //     ReactDOM.render(
+    //         Feed,
+    //         document.getElementById('root')
+    //     );
+    //     // navigate('/home')
+    // }
 
     // async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     //     buscarId(`/tema/${idPostagem}`, setUser, {
