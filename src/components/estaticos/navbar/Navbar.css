@@ -1,50 +1,49 @@
 .text-decoration-none {
     text-decoration: none !important;
-    margin-top: 7px;
 }
 
-.menuIcone{
+.menuIcone {
     text-decoration: none !important;
-    color: black !important;    
+    color: black !important;
 }
 
-.toolbar{
+.toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .cursor {
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     color: white !important;
+    line-height: 1.1 !important;
+    margin-right: 20px;
+    font-weight: 600;
 }
 
-.nomeHorizontal{
+.nomeHorizontal {
     height: 50px !important;
 }
 
-.appbar{
+.appbar {
     background-color: #173B64 !important;
     /* align-items: center; */
 }
 
-.navBarItem :hover
-{
- color: #E0E0E0;
+.navBarItem :hover {
+    color: #E0E0E0;
 }
 
-.navBarIcon{
-    font-size: xx-large !important;
+.navBarIcon {
+    /* font-size: xx-small !important; */
+    font-size: 20px !important;
 }
 
-.line0{
-    line-height: 1.1!important;
-}
 
-.navBarTxt{
-    padding-bottom: 10%;
-}
-
-.avatarIcon{
+.avatarIcon {
     font-size: 200% !important;
 }

@@ -84,17 +84,11 @@ export default function Navbar() {
                         <img src="https://i.imgur.com/H31Qdmr.png" alt="Nome Horizontal" className="nomeHorizontal" />
                     </Box>
                 </Link>
-                <Box display="flex" justifyContent="start" >
+                <Box display="flex" justifyContent="start" alignItems="center">
                     <Link to="/feed" className="text-decoration-none">
-                        <Box mx={1.5} className="cursor">
-                            <Typography className="line0" variant="h6" color="inherit">
-                                <Grid className="navBarItem" container >
-                                    <Grid container item direction={"column"} alignItems={"center"}>
-                                        <Grid item > <Home className="navBarIcon"/> </Grid>
-                                        <Grid item className="navBarTxt"> Home </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Typography>
+                        <Box className="cursor">
+                            <Grid item > <Home className="navBarIcon" /> </Grid>
+                            <Grid item className="navBarTxt"> Home </Grid>
                         </Box>
                     </Link>
                     {/* <Link to="/home" className="text-decoration-none">
@@ -105,16 +99,10 @@ export default function Navbar() {
                         </Box>
                     </Link> */}
 
-                    <Link to="/postagens" className="text-decoration-none">
-                        <Box mx={1.5} className="cursor">
-                            <Typography className="line0" variant="h6" color="inherit">
-                            <Grid className="navBarItem" container >
-                                    <Grid container item direction={"column"} alignItems={"center"}>
-                                        <Grid item > <LibraryBooksIcon className="navBarIcon"/> </Grid>
-                                        <Grid item className="navBarTxt"> Postagens </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Typography>
+                    <Link to="/tema" className="text-decoration-none">
+                        <Box className="cursor">
+                            <Grid item > <LibraryBooksIcon className="navBarIcon" /> </Grid>
+                            <Grid item className="navBarTxt"> Temas </Grid>
                         </Box>
                     </Link>
                     {/*<Link to="/tema" className="text-decoration-none">
@@ -132,15 +120,9 @@ export default function Navbar() {
                         </Box>
                     </Link> */}
                     <Link to="/sobre" className="text-decoration-none">
-                        <Box mx={1.5} className="cursor">
-                            <Typography className="line0" variant="h6" color="inherit">
-                            <Grid className="navBarItem" container >
-                                    <Grid container item direction={"column"} alignItems={"center"}>
-                                        <Grid item > <InfoIcon className="navBarIcon"/> </Grid>
-                                        <Grid item className="navBarTxt"> Sobre nós </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Typography>
+                        <Box className="cursor">
+                            <Grid item > <InfoIcon className="navBarIcon" /> </Grid>
+                            <Grid item className="navBarTxt"> Sobre nós </Grid>
                         </Box>
                     </Link>
 
@@ -190,8 +172,8 @@ export default function Navbar() {
                         </div>
                     )}
                 </Box>
-            </Toolbar>
-        </AppBar>
+            </Toolbar >
+        </AppBar >
     } else {
 
     }

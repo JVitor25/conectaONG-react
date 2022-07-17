@@ -14,7 +14,7 @@ import "./Feed.css";
 import { TabContext, TabPanel } from '@material-ui/lab';
 import MinhasPostagens from '../../components/postagens/minhasPostagens/MinhasPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
-import iconeAnuncio from "../../components/imagens/iconeAnuncio.png";
+import iconeAnuncio from "../../components/imagens/iconeAnuncio1.png";
 import ReactDOM from 'react-dom';
 import App from '../../App';
 
@@ -56,6 +56,7 @@ function Feed() {
     useEffect(() => {
         getTema()
     }, [temas.length])
+
     const userId = useSelector<TokenState, TokenState["id"]>(
         (state) => state.id
     );
@@ -87,13 +88,13 @@ function Feed() {
         navigate(`/atualizarusuario/${userId}`)
     }
 
-    // function back() {
-    //     ReactDOM.render(
-    //         Feed,
-    //         document.getElementById('root')
-    //     );
-    //     // navigate('/home')
-    // }
+    function back() {
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        );
+        navigate('/feed')
+    }
 
     // async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     //     buscarId(`/tema/${idPostagem}`, setUser, {
@@ -139,7 +140,7 @@ function Feed() {
                                                 <Typography variant="h6">Olá, {user.nome}.</Typography>
                                             </Box>
                                             <Box marginTop={1}>
-                                                <Button variant="outlined" size="small" onClick={goEditar}>Editar perfil</Button>
+                                                <Button variant="outlined" size="small" onClick={back}>Editar perfil</Button>
                                             </Box>
                                         </Box>
                                     </Toolbar>

@@ -1,10 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button } from "@material-ui/core"
+import { Container, Typography, TextField } from "@material-ui/core"
 import Tema from '../../../models/Tema';
 import { buscarId, post, put } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
+import { Box, Button } from '@mui/material';
+import "./CadastroTema.css"
 
 function CadastroTema() {
     let navigate = useNavigate();
@@ -51,7 +53,7 @@ function CadastroTema() {
 
         if (id !== undefined) {
             console.log(tema)
-            tema.postagem=null
+            tema.postagem = null
             put(`/tema`, tema, setTema, {
                 headers: {
                     'Authorization': token
@@ -75,13 +77,21 @@ function CadastroTema() {
 
     return (
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="tema" variant="outlined" name="tema" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
-                    Finalizar
-                </Button>
-            </form>
+            <Box className="boxCadastroTema" sx={{ background: "white" }}>
+                <form onSubmit={onSubmit}>
+                    <Typography variant="h4" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                    <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="tema" variant="outlined" name="tema" margin="normal" fullWidth />
+                    <Box className="ActionsCadastro">
+                        <Button variant="contained" color="error" onClick={back}>
+                            Voltar
+                        </Button>
+                        <Button
+                            type="submit" variant="contained" color="success">
+                            Finalizar
+                        </Button>
+                    </Box>
+                </form>
+            </Box>
         </Container>
     )
 }

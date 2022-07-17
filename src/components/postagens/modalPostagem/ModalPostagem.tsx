@@ -13,6 +13,7 @@ import { TokenState } from "../../../store/tokens/tokenReducer";
 import User from "../../../models/User";
 import { buscarId } from "../../../services/Service";
 import { useNavigate } from "react-router-dom";
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
 function getModalStyle() {
   const top = 50;
@@ -190,7 +191,9 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={4}>
+
               <ButtonBase onClick={editTemas} className="botaoDaPostagem" >
+                <LibraryBooksIcon className="modalIcon" />
                 Gerenciar Temas
               </ButtonBase>
             </Grid>
