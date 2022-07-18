@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-.cursor {
+.cursorNavbar {
     display: flex ;
     flex-direction: column;
     justify-content: center;
@@ -43,6 +43,9 @@
     font-size: 20px !important;
 }
 
+.navBarTxt{
+    
+}
 
 .avatarIcon {
     font-size: 200% !important;

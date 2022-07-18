@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { Box, Avatar, Grid, IconButton } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography, AppBar, Toolbar, Menu, MenuItem } from "@material-ui/core";
-import "./Navbar.css"
+import "./Navbar.css";
 import { AccountCircle } from "@material-ui/icons";
 import InfoIcon from '@mui/icons-material/Info';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
@@ -80,13 +80,13 @@ export default function Navbar() {
         componentsNavbar = <AppBar position="sticky" className="appbar">
             <Toolbar variant="dense" className="toolbar">
                 <Link to="/feed">
-                    <Box className="cursor" >
+                    <Box className="cursorNavbar" >
                         <img src="https://i.imgur.com/H31Qdmr.png" alt="Nome Horizontal" className="nomeHorizontal" />
                     </Box>
                 </Link>
                 <Box display="flex" justifyContent="start" alignItems="center">
                     <Link to="/feed" className="text-decoration-none">
-                        <Box className="cursor">
+                        <Box className="cursorNavbar">
                             <Grid item > <Home className="navBarIcon" /> </Grid>
                             <Grid item className="navBarTxt"> Home </Grid>
                         </Box>
@@ -100,7 +100,7 @@ export default function Navbar() {
                     </Link> */}
 
                     <Link to="/tema" className="text-decoration-none">
-                        <Box className="cursor">
+                        <Box className="cursorNavbar">
                             <Grid item > <LibraryBooksIcon className="navBarIcon" /> </Grid>
                             <Grid item className="navBarTxt"> Temas </Grid>
                         </Box>
@@ -120,7 +120,7 @@ export default function Navbar() {
                         </Box>
                     </Link> */}
                     <Link to="/sobre" className="text-decoration-none">
-                        <Box className="cursor">
+                        <Box className="cursorNavbar">
                             <Grid item > <InfoIcon className="navBarIcon" /> </Grid>
                             <Grid item className="navBarTxt"> Sobre nós </Grid>
                         </Box>
