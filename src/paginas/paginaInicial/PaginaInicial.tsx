@@ -9,6 +9,7 @@ import GithubIcon from '@material-ui/icons/GitHub';
 
 // Imagens:
 import joaoLima from '../../components/imagens/joaoLima.png';
+import silvio from '../../components/imagens/silvio.png';
 import humanos from '../../components/imagens/conversa.png';
 import joaoLucas from '../../components/imagens/joaoLucas.png';
 import mulher from '../../components/imagens/mulher.png';
@@ -36,13 +37,13 @@ export default function PaginaInicial() {
                         </Box>
                     </Link>
                     <Box display="flex" justifyContent="start" >
-                            <Box mx={1.5} className="cursor">
-                                <Typography variant="h6" color="inherit">
-                                    <a className="nav" href="#inicio">
-                                        Ínicio
-                                    </a>
-                                </Typography>
-                            </Box>
+                        <Box mx={1.5} className="cursor">
+                            <Typography variant="h6" color="inherit">
+                                <a className="nav" href="#inicio">
+                                    Ínicio
+                                </a>
+                            </Typography>
+                        </Box>
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
                                 <a className="nav" href="#pilares">Nossos pilares</a>
@@ -229,7 +230,7 @@ export default function PaginaInicial() {
                         </Box>
 
                         <Typography className="texto-time">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça.In elementis mé pra quem é amistosis quis leo.
                         </Typography>
 
                         <Box className="box">
@@ -246,7 +247,7 @@ export default function PaginaInicial() {
                         </Box>
 
                         <Typography className="texto-time">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
+                            Recifense, apaixonado pela ciência e tecnologia, com formação técnica em Redes de Computadores e desenvolvedor Full Stack Java Jr.
                         </Typography>
                         <Box className="box">
                             <a href="https://github.com/GabrielMendes94" target='blank'><GithubIcon className="github-icone zoom" /></a>
@@ -278,7 +279,7 @@ export default function PaginaInicial() {
                         </Box>
 
                         <Typography className="texto-time">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
+                        Um mineiro de 19 anos apaixonado por matemática e resoluções de problemas. Me identifico muito o segmento de indústria de área de tecnologia e por isso eu sei que posso agregar muito ao mundo Tech.
                         </Typography>
                         <Box className="box">
                             <a href="https://github.com/JVitor25" target='blank'><GithubIcon className="github-icone zoom" /></a>
@@ -294,7 +295,8 @@ export default function PaginaInicial() {
                         </Box>
 
                         <Typography className="texto-time">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
+                            Apaixonado por ciência e tecnologia. Acumulador compulsivo de FPS e cores no monitor.
+                            Desafiando a realidade do universo sendo Nerd, K-popper e crossfiteiro simultaneamente.
                         </Typography>
                         <Box className="box">
                             <a href="https://github.com/xMoogle" target='blank'><GithubIcon className="github-icone zoom" /></a>
@@ -303,14 +305,14 @@ export default function PaginaInicial() {
                     </Grid>
                     <Grid item md={2} className="cartao-time" >
                         <Box>
-                            <img src="https://pbs.twimg.com/media/E2k9NyhXoAYfF_g.jpg" alt="" className="foto-time zoom" />
+                            <img src={silvio} alt="" className="foto-time zoom" />
                             <Typography className="nome-time">
-                                Silvoncio
+                                Silvio Maurício
                             </Typography>
                         </Box>
 
                         <Typography className="texto-time">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit tempora excepturi impedit optio, eligendi
+                            Sou um jovem pernambucano que cursa Engenharia Civil, mas perdidamente apaixonado pela tecnologia e que está em transição de carreira adentrando nesse mundão do desenvolvimento.
                         </Typography>
                         <Box className="box">
                             <a href="https://github.com/silvoncio" target='blank'><GithubIcon className="github-icone zoom" /></a>
