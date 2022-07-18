@@ -164,20 +164,25 @@
 .texto {
     color: #e4e4e4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-    font-size: 2em!important;
+    font-size: 1.5em!important;
     margin: 0 50px !important;
     text-align: justify;
+}
+
+a .cursor{
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.0075em !important;
 }
 
 a {
     text-decoration: none;
     color: #ffffff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-}
-
-a:hover {
-    transition:  0.3s ease;
-    color: #173B64;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important; */
 }
 
 .txt-valores {

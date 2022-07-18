@@ -68,7 +68,7 @@ export default function Navbar() {
     function goLogout() {
         dispatch(addToken(""))
         alert("Usuário deslogado.")
-        navigate("/login")
+        navigate("/")
     }
 
     function goEditar() {
