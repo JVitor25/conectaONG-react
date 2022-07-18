@@ -140,7 +140,7 @@ function Feed() {
                                                 <Typography variant="h6">Olá, {user.nome}.</Typography>
                                             </Box>
                                             <Box marginTop={1}>
-                                                <Button variant="outlined" size="small" onClick={back}>Editar perfil</Button>
+                                                <Button variant="outlined" size="small" onClick={goEditar}>Editar perfil</Button>
                                             </Box>
                                         </Box>
                                     </Toolbar>
