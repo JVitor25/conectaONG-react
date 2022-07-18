@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
+import { Button, Card, CardActions, Divider, CardContent, Grid, Typography } from "@material-ui/core";
 import { Box, Avatar, Checkbox } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -13,6 +13,8 @@ import CreateIcon from '@mui/icons-material/Create';
 import "./MinhasPostagens.css"
 import User from "../../../models/User";
 import { CheckBox, Favorite, FavoriteBorder, Label } from "@material-ui/icons";
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 export default function MinhasPostagens() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -100,7 +102,7 @@ export default function MinhasPostagens() {
                     spacing={2}
                   >
                     <Grid item>
-                      <Box marginLeft={1}>
+                      <Box marginLeft={1} >
                         <Avatar
                           alt={user.nome}
                           src={user.foto}
@@ -111,10 +113,18 @@ export default function MinhasPostagens() {
                     <Grid item xs>
                       <Box display="flex" justifyContent="space-between">
                         <Typography variant="h6">{user.nome}</Typography>
-                        <IconButton>
-                          <CreateIcon
-                          />
-                        </IconButton>
+                        <Box>
+                          <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                            <IconButton>
+                              <CreateIcon />
+                            </IconButton>
+                          </Link>
+                          <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none" >
+                            <IconButton>
+                              <DeleteIcon />
+                            </IconButton>
+                          </Link>
+                        </Box>
                       </Box>
                       <Box>
                         <Typography>Contato: {post.contato}</Typography>
@@ -122,45 +132,20 @@ export default function MinhasPostagens() {
                       <Box>
                         <Typography>Publicada no dia: {new Date(post.data).toLocaleDateString()}</Typography>
                       </Box>
-
                     </Grid>
                   </Grid>
+                  {/* <Box sx={{ width: "100%", marginTop:1}}> <Divider /> </Box> */}
                   <Grid item >
                     <Box sx={{ textAlign: 'justify', m: 1 }}>
                       <Typography variant="h5" component="h2">{post.titulo}</Typography>
                       <Typography variant="body2" component="p">{post.mensagem}</Typography>
                       <Box display="flex" justifyContent="space-between" sx={{ paddingTop: 1, fontStyle: "italic", fontWeight: "bold" }}>Tema: {post.tema?.tema}
-                        <Checkbox  icon={<FavoriteBorderIcon color="error"/>} checkedIcon={< FavoriteIcon color="error"/>}/>
+                        <Checkbox icon={<FavoriteBorderIcon color="error" />} checkedIcon={< FavoriteIcon color="error" />} />
                       </Box>
                     </Box>
                   </Grid>
                 </Grid>
               </CardContent>
-
-              {/* <CardActions>
-                  <Box display="flex" justifyContent="center" mb={1.5}>
-
-                    <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                      <Box mx={1}>
-                        <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                          atualizar
-                        </Button>
-                      </Box>
-                    </Link>
-                    <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                      <Box mx={1}>
-                        <Button variant="contained" size='small' color="secondary">
-                          deletar
-                        </Button>
-                      </Box>
-                    </Link>
-                    <Box mx={1}>
-                      <IconButton color="error">
-                        <FavoriteBorderIcon />
-                      </IconButton>
-                    </Box>
-                  </Box>
-                </CardActions> */}
             </Card>
           </Box >
 

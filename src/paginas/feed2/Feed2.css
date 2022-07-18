@@ -1,0 +1,67 @@
+.appbarLateral {
+    border-radius: 10px;
+    background-color: #f9f9f9!important;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.boxDaToolBar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 10px;
+    /* width: 340px; */
+    margin-bottom: 10px;
+    /* margin-top: 5px; */
+    font-weight: bold;
+}
+
+.toolbarUsuario1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.toolbarUsuario2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    text-align: justify;
+    align-items: stretch;
+    color: black;
+    padding: 3px !important;
+    font-size: 20px !important;
+}
+
+.gridUsuario {
+    position: sticky !important;
+    top: 45px !important;
+}
+
+.tabPanel {
+    padding: 0 !important;
+}
+
+.botaoMenu {
+    color: black;
+    text-align: justify !important;
+    font-weight: 600 !important;
+}
+
+.imagensNoticias {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.text-decoration-noneFeed {
+    text-decoration: none !important;
+    padding: 0;
+}
+
+.Divider {
+    color: black;
+    border: 100px !important;
+    border-width: 10px !important;
+}

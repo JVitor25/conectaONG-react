@@ -18,6 +18,7 @@ import AtualizarUsuario from './paginas/atualizarUsuario/AtualizarUsuario';
 import Contato from './paginas/contato/Contato';
 import Feed from './paginas/feed/Feed';
 import PaginaInicial from './paginas/paginaInicial/PaginaInicial';
+import Feed2 from './paginas/feed2/Feed2';
 
 export default function App() {
 
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/atualizarusuario/:id" element={<AtualizarUsuario />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/feed" element={<Feed />} />
+            <Route path="/feed2" element={<Feed2 />} />
             <Route path="/tema" element={<ListaTema />} />
             <Route path="/postagens" element={<ListaPostagem />} />
             <Route path="/formularioPostagem" element={<CadastroPost />} />

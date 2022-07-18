@@ -1,7 +1,7 @@
-import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
+import { Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
 import User from "../../../models/User";
@@ -10,6 +10,9 @@ import { TokenState } from "../../../store/tokens/tokenReducer";
 import ReactDOM from 'react-dom';
 import Feed from "../../../paginas/feed/Feed";
 import App from "../../../App";
+import { Rotate90DegreesCcw } from "@material-ui/icons";
+import { Box, Button } from "@mui/material";
+import "./CadastroPost.css";
 
 export default function CadastroPost() {
     let navigate = useNavigate();
@@ -33,7 +36,7 @@ export default function CadastroPost() {
         titulo: '',
         mensagem: '',
         data: '',
-        contato: null,
+        contato: "",
         tema: null,
         usuario: null
     });
@@ -113,23 +116,23 @@ export default function CadastroPost() {
             })
             alert('Postagem cadastrada com sucesso');
         }
-
+        back()
     }
 
+    let rota = useLocation();
     function back() {
-        // ReactDOM.render(
-        //     <App />,
-        //     document.getElementById('root')
-        // );
-        // navigate('/home')
+        if (rota.pathname === "/feed") {
+            navigate('/feed2')
+        } else if (rota.pathname === "/feed2") {
+            navigate('/feed')
+        } else {
+            navigate('/feed')
+        }
     }
 
-    function refreshPage() {
-        window.location.reload();
-    }
-
-    return (
-        <Container maxWidth="sm" className="topo">
+    var formulario;
+    if (rota.pathname === "/feed" || rota.pathname === "/feed2") {
+        formulario = <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center">
                     Formulário de cadastro de Postagem
@@ -155,12 +158,67 @@ export default function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Finalizar
-                    </Button>
+                    <Box className="ActionsCadastro">
+                        <Button variant="contained" color="error" onClick={back}>
+                            Voltar
+                        </Button>
+                        <Button
+                            type="submit" variant="contained" color="success">
+                            Finalizar
+                        </Button>
+                    </Box>
                 </FormControl>
             </form>
         </Container>
+    } else {
+
+        formulario = <Container maxWidth="sm" className="topo">
+            <Box className="boxCadastroPostagem" sx={{ background: "white" }}>
+                <form onSubmit={onSubmit}>
+                    <Typography variant="h3" color="textSecondary" component="h1" align="center">
+                        Formulário de cadastro de Postagem
+                    </Typography>
+                    <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" name="titulo" variant="outlined" margin="normal" fullWidth />
+                    <TextField value={postagem.mensagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="mensagem" label="mensagem" name="mensagem" variant="outlined" margin="normal" fullWidth />
+                    <TextField value={postagem.contato} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="contato" label="contato" name="contato" variant="outlined" margin="normal" fullWidth />
+
+                    <FormControl fullWidth variant="filled">
+                        <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                        <Select
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
+                            onChange={(e) => buscarId(`/tema/${e.target.value}`, setTema, {
+                                headers: {
+                                    'Authorization': token
+                                }
+                            })}>
+                            {
+                                temas.map(tema => (
+                                    <MenuItem value={tema.id}>{tema.tema}</MenuItem>
+                                ))
+                            }
+                        </Select>
+                        <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                        <Box className="ActionsCadastro">
+                            <Button variant="contained" color="error" onClick={back}>
+                                Voltar
+                            </Button>
+                            <Button
+                                type="submit" variant="contained" color="success">
+                                Finalizar
+                            </Button>
+                        </Box>
+                    </FormControl>
+                </form>
+            </Box>
+        </Container>
+
+    }
+
+    return (
+        <>
+            {formulario}
+        </>
     )
 
 }

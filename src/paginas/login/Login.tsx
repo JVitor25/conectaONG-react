@@ -50,7 +50,7 @@ function Login() {
             // console.log("ID: " + respUserLogin.id)
             dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))
-            navigate('/feed')
+        navigate('/feed/')
         }
     }, [respUserLogin.token])
 

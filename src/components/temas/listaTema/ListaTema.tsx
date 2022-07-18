@@ -75,6 +75,10 @@ export default function ListaTema() {
     navigate(`/feed`)
   }
 
+  function newTema() {
+    navigate(`/formularioTema`)
+  }
+
   return (
     <>
       <Grid container xs={12}>
@@ -128,12 +132,10 @@ export default function ListaTema() {
           direction="column"
         >
           <Box className="boxBotaoCriarTema" mx={2} marginTop={2}>
-            <Link to={`/formularioTema`} className="text-decorator-noneTema">
-              <ButtonBase className="botaoCriarTema">
-                <AddIcon />
-                Criar Novo Tema
-              </ButtonBase>
-            </Link>
+            <ButtonBase className="botaoCriarTema" onClick={newTema}>
+              <AddIcon />
+              Criar Novo Tema
+            </ButtonBase>
           </Box>
 
           <Box mx={2} marginTop={2}> <Divider /> </Box>
