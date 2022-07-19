@@ -147,6 +147,7 @@ export default function CadastroPost() {
     }
 
     let rota = useLocation();
+
     function back() {
         if (rota.pathname === "/feed") {
             navigate('/feed2')
