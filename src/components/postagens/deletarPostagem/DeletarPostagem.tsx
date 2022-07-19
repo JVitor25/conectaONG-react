@@ -3,6 +3,7 @@ import { Button, Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import Postagem from "../../../models/Postagem";
 import { buscarId, deleteId } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
@@ -18,7 +19,16 @@ export default function DeletarPostagem() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.warn('Você precisa estar logado.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+        });
       navigate("/login")
     }
   }, [token]);
@@ -44,7 +54,16 @@ export default function DeletarPostagem() {
         'Authorization': token
       }
     });
-    alert("Postagem deletada com sucesso!")
+    toast.success('Postagem deletada.', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored',
+      });
   }
 
   function nao() {

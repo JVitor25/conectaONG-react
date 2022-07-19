@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button } from '@mui/material';
 import "./CadastroTema.css"
+import { toast } from 'react-toastify';
 
 function CadastroTema() {
     let navigate = useNavigate();
@@ -21,7 +22,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+            toast.warn('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
             navigate("/login")
         }
     }, [token])
@@ -59,14 +69,32 @@ function CadastroTema() {
                     'Authorization': token
                 }
             })
-            alert('Tema atualizado com sucesso!');
+            toast.success('Tema atualizado.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
         } else {
             post(`/tema`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado com sucesso')
+            toast.success('Tema cadastrado.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
         }
         back()
     }

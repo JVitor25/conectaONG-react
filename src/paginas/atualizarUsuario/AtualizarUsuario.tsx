@@ -7,6 +7,7 @@ import User from '../../models/User';
 import { buscarId, put } from '../../services/Service';
 import { TokenState } from '../../store/tokens/tokenReducer';
 import "./AtualizarUsuario.css";
+import { toast } from 'react-toastify';
 
 function AtualizarUsuario() {
     let navigate = useNavigate();
@@ -25,7 +26,16 @@ function AtualizarUsuario() {
 
     useEffect(() => {
         if (token === "") {
-          alert("Você precisa estar logado")
+          toast.info('Você precisa estar logado.', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+            });
           navigate("/login")
         }
       }, [token])    
@@ -53,10 +63,28 @@ function AtualizarUsuario() {
                     'Authorization': token
                 }
             })
-            alert('Usuário atualizado com sucesso')
+            toast.success('Usuário atualizado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
             navigate('/feed')
         } else {
-            alert('As senhas estão diferentes!')
+            toast.warn('As senhas devem ser as mesmas.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
         }
     }
 

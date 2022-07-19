@@ -14,6 +14,7 @@ import "./MinhasPostagens.css"
 import User from "../../../models/User";
 import { CheckBox, Favorite, FavoriteBorder, Label } from "@material-ui/icons";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { toast } from "react-toastify";
 
 
 export default function MinhasPostagens() {
@@ -62,7 +63,16 @@ export default function MinhasPostagens() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.info('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+        });
       navigate("/login")
 
     }

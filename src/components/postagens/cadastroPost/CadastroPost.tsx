@@ -13,6 +13,7 @@ import App from "../../../App";
 import { Rotate90DegreesCcw } from "@material-ui/icons";
 import { Box, Button } from "@mui/material";
 import "./CadastroPost.css";
+import { toast } from "react-toastify";
 
 export default function CadastroPost() {
     let navigate = useNavigate();
@@ -51,7 +52,15 @@ export default function CadastroPost() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+            toast.info('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
             navigate("/login")
         }
     }, [token]);
@@ -106,7 +115,16 @@ export default function CadastroPost() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
         } else {
             console.log(postagem)
             post(`/postagem`, postagem, setPostagem, {
@@ -114,7 +132,16 @@ export default function CadastroPost() {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
         }
         back()
     }

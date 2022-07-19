@@ -12,6 +12,7 @@ import { addToken } from "../../../store/tokens/action";
 import { buscarId } from "../../../services/Service";
 import User from "../../../models/User";
 import { Home } from "@mui/icons-material";
+import { toast } from "react-toastify";
 
 
 export default function Navbar() {
@@ -67,7 +68,16 @@ export default function Navbar() {
 
     function goLogout() {
         dispatch(addToken(""))
-        alert("Usuário deslogado.")
+        toast.success("Usuário deslogado.", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+        });
         navigate("/")
     }
 

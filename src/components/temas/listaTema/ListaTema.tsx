@@ -12,6 +12,7 @@ import { Home } from "@mui/icons-material";
 import iconeAnuncio from "../../imagens/iconeAnuncio1.png";
 import AddIcon from '@mui/icons-material/Add';
 import { Add } from '@material-ui/icons';
+import { toast } from 'react-toastify';
 
 export default function ListaTema() {
 
@@ -23,7 +24,16 @@ export default function ListaTema() {
 
   useEffect(() => {
     if (token === "") {
-      alert('Hoje não')
+      toast.error('Você precisa estar logado.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+        });
       navigate('/login')
     }
   }, [token])

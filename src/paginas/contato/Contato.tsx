@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
+import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import './Contato.css';
+import { Box } from '@mui/material';
 
 function Contato() {
     return (

@@ -8,10 +8,8 @@ import { buscar } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import IconButton from '@mui/material/IconButton';
-import CreateIcon from '@mui/icons-material/Create';
 import "./ListaPostagems.css"
-import { color } from "@mui/system";
+import { toast } from "react-toastify";
 
 export default function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -20,13 +18,22 @@ export default function ListaPostagem() {
   );
   let navigate = useNavigate();
 
-  useEffect(() => {
-    if (token === "") {
-      alert("Você precisa estar logado")
-      navigate("/login")
+  // useEffect(() => {
+  //   if (token === "") {
+  //     toast.warn('Você precisa estar logado', {
+  //       position: "top-right",
+  //       autoClose: 2000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: 'colored',
+  //       });
+  //     navigate("/login")
 
-    }
-  }, [token]);
+  //   }
+  // }, [token]);
 
   async function getPost() {
     await buscar("/postagem", setPosts, {

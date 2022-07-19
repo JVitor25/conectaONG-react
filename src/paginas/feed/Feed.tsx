@@ -17,6 +17,7 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 import iconeAnuncio from "../../components/imagens/iconeAnuncio1.png";
 import ReactDOM from 'react-dom';
 import App from '../../App';
+import { toast } from 'react-toastify';
 
 function Feed() {
     const [temas, setTemas] = useState<Tema[]>([])
@@ -36,7 +37,16 @@ function Feed() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                });
             navigate("/login")
 
         }
