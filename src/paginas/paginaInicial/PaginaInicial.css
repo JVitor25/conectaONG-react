@@ -194,3 +194,14 @@ a {
 .icon-valores {
     color: white;
 }
+
+.nome-valor {
+    font-size: 4vh !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-weight: bold !important;
+}
+.nome-tecnologia {
+    font-size: 3vh !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-weight: bold !important;
+}
