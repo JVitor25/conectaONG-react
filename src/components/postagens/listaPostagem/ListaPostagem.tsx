@@ -87,7 +87,7 @@ export default function ListaPostagem() {
                         <Typography>Contato: {post.contato}</Typography>
                       </Box>
                       <Box>
-                        <Typography>Publicada no dia: {new Date(post.data).toLocaleDateString()}</Typography>
+                        <Typography>Publicada no dia: {new Date(post.data).toLocaleDateString()} às {new Date(post.data).toLocaleTimeString([],{timeStyle:'short'})}.</Typography>
                       </Box>
                     </Grid>
                   </Grid>
