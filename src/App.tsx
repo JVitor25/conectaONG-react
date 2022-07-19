@@ -37,6 +37,7 @@ export default function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/feed2" element={<Feed2 />} />
+            <Route path="/tema" element={<ListaTema />} />
             <Route path="/formularioPostagem" element={<CadastroPost />} />
             <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
             <Route path="/formularioTema" element={<CadastroTema />} />
