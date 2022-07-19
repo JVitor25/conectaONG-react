@@ -1,6 +1,6 @@
 import { AppBar, Button, Checkbox, Divider, FormControl, Grid, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
 import { Avatar, InputLabel, Box, FormHelperText, ButtonBase, Card, CardContent } from '@mui/material';
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import ListaPostagem from '../../components/postagens/listaPostagem/ListaPostagem';
@@ -27,7 +27,6 @@ function Feed() {
         postagem: null
     });
     const [valueView, setValueView] = useState('2')
-    // const { id } = useParams<{ id: string }>();
     const [filtroPostagem, setFiltroPostagem] = useState()
     const token = useSelector<TokenState, TokenState["token"]>(
         (state) => state.token
@@ -51,10 +50,6 @@ function Feed() {
 
         }
     }, [token]);
-
-    // function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
-    //     setValue(newValue);
-    // }
 
     async function getTema() {
         await buscar("/tema", setTemas, {
@@ -105,14 +100,6 @@ function Feed() {
         );
         navigate('/feed')
     }
-
-    // async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    //     buscarId(`/tema/${idPostagem}`, setUser, {
-    //         headers: {
-    //             'Authorization': token
-    //         }
-    //     })
-    // }
     useEffect(() => {
         console.log(tema)
     }, [tema]);

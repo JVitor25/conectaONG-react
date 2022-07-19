@@ -18,23 +18,6 @@ export default function ListaPostagem() {
   );
   let navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (token === "") {
-  //     toast.warn('Você precisa estar logado', {
-  //       position: "top-right",
-  //       autoClose: 2000,
-  //       hideProgressBar: false,
-  //       closeOnClick: true,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: 'colored',
-  //       });
-  //     navigate("/login")
-
-  //   }
-  // }, [token]);
-
   async function getPost() {
     await buscar("/postagem", setPosts, {
       headers: {
@@ -78,10 +61,6 @@ export default function ListaPostagem() {
                     <Grid item xs>
                       <Box display="flex" justifyContent="space-between">
                         <Typography variant="h6">{post.usuario?.nome}</Typography>
-                        {/* <IconButton>
-                            <CreateIcon
-                            />
-                          </IconButton> */}
                       </Box>
                       <Box>
                         <Typography>Contato: {post.contato}</Typography>
@@ -103,31 +82,6 @@ export default function ListaPostagem() {
                   </Grid>
                 </Grid>
               </CardContent>
-
-              {/* <CardActions>
-                  <Box display="flex" justifyContent="center" mb={1.5}>
-
-                    <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                      <Box mx={1}>
-                        <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                          atualizar
-                        </Button>
-                      </Box>
-                    </Link>
-                    <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                      <Box mx={1}>
-                        <Button variant="contained" size='small' color="secondary">
-                          deletar
-                        </Button>
-                      </Box>
-                    </Link>
-                    <Box mx={1}>
-                      <IconButton color="error">
-                        <FavoriteBorderIcon />
-                      </IconButton>
-                    </Box>
-                  </Box>
-                </CardActions> */}
             </Card>
           ))
         }

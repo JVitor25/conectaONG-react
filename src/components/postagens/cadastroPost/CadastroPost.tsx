@@ -1,16 +1,13 @@
 import { Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
 import User from "../../../models/User";
 import { buscar, buscarId, post, put } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import ReactDOM from 'react-dom';
-import Feed from "../../../paginas/feed/Feed";
-import App from "../../../App";
-import { Rotate90DegreesCcw } from "@material-ui/icons";
 import { Box, Button } from "@mui/material";
 import "./CadastroPost.css";
 import { toast } from "react-toastify";

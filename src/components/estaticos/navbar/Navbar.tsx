@@ -47,10 +47,6 @@ export default function Navbar() {
         })
     }
 
-    // var fotoPerfil = user.foto;
-    // console.log(fotoPerfil);
-    // console.log(user.foto);
-
     const [auth, setAuth] = useState(true);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -101,13 +97,6 @@ export default function Navbar() {
                             <Grid item className="navBarTxt"> Home </Grid>
                         </Box>
                     </Link>
-                    {/* <Link to="/home" className="text-decoration-none">
-                        <Box mx={1.5} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                HomeAntiga
-                            </Typography>
-                        </Box>
-                    </Link> */}
 
                     <Link to="/tema" className="text-decoration-none">
                         <Box className="cursorNavbar">
@@ -115,20 +104,6 @@ export default function Navbar() {
                             <Grid item className="navBarTxt"> Temas </Grid>
                         </Box>
                     </Link>
-                    {/*<Link to="/tema" className="text-decoration-none">
-                        <Box mx={1.5} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Temas
-                            </Typography>
-                        </Box>
-                    </Link>
-                    <Link to="/formularioTema" className="text-decoration-none">
-                        <Box mx={1.5} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Cadastrar Tema
-                            </Typography>
-                        </Box>
-                    </Link> */}
                     <Link to="/sobre" className="text-decoration-none">
                         <Box className="cursorNavbar">
                             <Grid item > <InfoIcon className="navBarIcon" /> </Grid>
@@ -146,11 +121,6 @@ export default function Navbar() {
                                 onClick={handleMenu}
                                 color="inherit"
                             >
-                                {/* <Avatar
-                                    alt={user.nome}
-                                    src={user.foto}
-                                    sx={{ width: 40, height: 40 }}
-                                /> */}
                                 <AccountCircle />
                             </IconButton>
                             <Menu

@@ -1,10 +1,10 @@
-import { Button, Card, CardActions, Divider, CardContent, Grid, Typography } from "@material-ui/core";
+import {  Card, CardContent, Grid, Typography } from "@material-ui/core";
 import { Box, Avatar, Checkbox } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
-import { buscar, buscarId } from "../../../services/Service";
+import { buscarId } from "../../../services/Service";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -19,14 +19,6 @@ import { toast } from "react-toastify";
 
 export default function MinhasPostagens() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  // const [posts, setPosts] = useState<Postagem>({
-  //   id: 0,
-  //   titulo: '',
-  //   mensagem: '',
-  //   data: '',
-  //   tema: null,
-  //   usuario: null
-  // })
   const token = useSelector<TokenState, TokenState["token"]>(
     (state) => state.token
   );
@@ -58,7 +50,6 @@ export default function MinhasPostagens() {
         'Authorization': token
       }
     })
-    // await setPosts(user.postagem);
   }
 
   useEffect(() => {
@@ -77,21 +68,6 @@ export default function MinhasPostagens() {
 
     }
   }, [token]);
-
-  // async function getPost() {
-  //   console.log(user)
-  //   await buscar("/postagem", setPosts, {
-  //     headers: {
-  //       'Authorization': token
-  //     }
-  //   })
-
-  // }
-
-  // useEffect(() => {
-  //   setPosts(posts:postagem)
-  // }, [user]);
-
   return (
     <>
       <Grid container direction="column-reverse">
@@ -144,7 +120,6 @@ export default function MinhasPostagens() {
                       </Box>
                     </Grid>
                   </Grid>
-                  {/* <Box sx={{ width: "100%", marginTop:1}}> <Divider /> </Box> */}
                   <Grid item >
                     <Box sx={{ textAlign: 'justify', m: 1 }}>
                       <Typography variant="h5" component="h2">{post.titulo}</Typography>
@@ -158,7 +133,6 @@ export default function MinhasPostagens() {
               </CardContent>
             </Card>
           </Box >
-
         ))
         }
       </Grid >

@@ -14,6 +14,7 @@ import User from "../../../models/User";
 import { buscarId } from "../../../services/Service";
 import { useNavigate } from "react-router-dom";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import { toast } from "react-toastify";
 
 function getModalStyle() {
   const top = 50;
@@ -92,13 +93,23 @@ function ModalPostagem() {
     >
       <Box display="flex" justifyContent="flex-end" className="cursor">
         <CloseIcon onClick={handleClose} />
-
       </Box>
-
       <CadastroPost />
-
     </div>
   );
+
+  function ImplementacaoFutura(){
+    toast.info('Função ainda não implementada', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored',
+    });
+  }
 
   return (
     <div>
@@ -160,7 +171,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={3}>
-              <ButtonBase className="botaoDaPostagem">
+              <ButtonBase className="botaoDaPostagem" onClick={ImplementacaoFutura}>
                 <WallpaperIcon fontSize="medium" />
                 Foto
               </ButtonBase>
@@ -170,7 +181,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={2}>
-              <ButtonBase className="botaoDaPostagem">
+              <ButtonBase className="botaoDaPostagem" onClick={ImplementacaoFutura}>
                 <YouTubeIcon fontSize="medium" />
                 Video
               </ButtonBase>
@@ -181,7 +192,7 @@ function ModalPostagem() {
               container
               justifyContent="center"
               xs={3}>
-              <ButtonBase className="botaoDaPostagem">
+              <ButtonBase className="botaoDaPostagem" onClick={ImplementacaoFutura}>
                 <AddReactionIcon fontSize="medium" />
                 Reação
               </ButtonBase>

@@ -27,7 +27,6 @@ function Feed2() {
         postagem: null
     });
     const [valueView, setValueView] = useState('2')
-    // const { id } = useParams<{ id: string }>();
     const [filtroPostagem, setFiltroPostagem] = useState()
     const token = useSelector<TokenState, TokenState["token"]>(
         (state) => state.token
@@ -46,15 +45,11 @@ function Feed2() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
             navigate("/login")
 
         }
     }, [token]);
-
-    // function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
-    //     setValue(newValue);
-    // }
 
     async function getTema() {
         await buscar("/tema", setTemas, {
@@ -95,7 +90,7 @@ function Feed2() {
     }
 
     function goEditar() {
-    navigate(`/atualizarusuario/${userId}`)
+        navigate(`/atualizarusuario/${userId}`)
     }
 
     function back() {
@@ -106,13 +101,6 @@ function Feed2() {
         navigate('/feed')
     }
 
-    // async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    //     buscarId(`/tema/${idPostagem}`, setUser, {
-    //         headers: {
-    //             'Authorization': token
-    //         }
-    //     })
-    // }
     useEffect(() => {
         console.log(tema)
     }, [tema]);
@@ -240,7 +228,6 @@ function Feed2() {
                                                                 <Box>
                                                                     <Typography>Publicada no dia: {new Date(post.data).toLocaleDateString()}</Typography>
                                                                 </Box>
-
                                                             </Grid>
                                                         </Grid>
                                                         <Grid item >

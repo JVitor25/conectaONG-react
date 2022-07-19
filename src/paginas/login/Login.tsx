@@ -47,11 +47,9 @@ function Login() {
 
     useEffect(() => {
         if (respUserLogin.token !== "") {
-            // console.log("Token: " + respUserLogin.token)
-            // console.log("ID: " + respUserLogin.id)
             dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))
-        navigate('/feed')
+            navigate('/feed')
         }
     }, [respUserLogin.token])
 
@@ -68,7 +66,7 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
         } catch (erro) {
             toast.error('Dados inconsistentes.', {
                 position: "top-right",
@@ -79,7 +77,7 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
         }
     }
     return (
