@@ -73,7 +73,7 @@ function AtualizarUsuario() {
                 progress: undefined,
                 theme: 'colored',
                 });
-            navigate('/feed')
+            navigate("/feed")
         } else {
             toast.warn('As senhas devem ser as mesmas.', {
                 position: "top-right",

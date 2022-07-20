@@ -13,31 +13,7 @@ export default function Footer() {
     return (
         <>
             <Grid container direction='row' spacing={8} className='footer'>
-                <Grid item xs={3}>
-                    <h3 className='titulo-footer'>O ConectaONG</h3>
-                    <Box className='under-titulo'></Box>
-                    <Link to='' className='text-decorator-none links-footer'>
-                        <Typography variant='h6' component='h6' color='inherit'>
-                            Home
-                        </Typography>
-                    </Link>
-                    <Link to='' className='text-decorator-none links-footer'>
-                        <Typography variant='h6' component='h6' color='inherit'>
-                            Sobre
-                        </Typography>
-                    </Link>
-                    <Link to='' className='text-decorator-none links-footer'>
-                        <Typography variant='h6' component='h6' color='inherit'>
-                            Equipe
-                        </Typography>
-                    </Link>
-                    <Link to='' className='text-decorator-none links-footer'>
-                        <Typography variant='h6' component='h6' color='inherit'>
-                            Nossos objetivos
-                        </Typography>
-                    </Link>
-                </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <h3 className='titulo-footer'>O ConectaONG</h3>
                     <Box className='under-titulo'></Box>
                     <Link to='' className='text-decorator-none links-footer'>
@@ -61,7 +37,7 @@ export default function Footer() {
                         </Typography>
                     </Link>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <h3 className='titulo-footer'>LinkedIn</h3>
                     <Box className='under-titulo'></Box>
                     <a href='https://www.linkedin.com/in/jo%C3%A3o-vitor-lima25/' className='text-decorator-none links-footer' target='_blank'>
@@ -91,11 +67,11 @@ export default function Footer() {
                     </a>
                     <a href='https://github.com/silvoncio' className='text-decorator-none links-footer' target='_blank'>
                         <Typography variant='h6' component='h6' color='inherit'>
-                            Silvio
+                            Silvio Mauricio
                         </Typography>
                     </a>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <h3 className='titulo-footer'>Redes Sociais</h3>
                     <Box className='under-titulo'></Box>
                     <Box display="flex" alignItems="center">

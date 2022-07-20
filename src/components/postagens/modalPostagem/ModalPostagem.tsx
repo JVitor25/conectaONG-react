@@ -66,7 +66,7 @@ function ModalPostagem() {
     if (userId !== undefined) {
       findById(userId)
     }
-  }, [userId]);
+  }, [user]);
 
   async function findById(id: string) {
     buscarId(`/usuarios/${userId}`, setUser, {
