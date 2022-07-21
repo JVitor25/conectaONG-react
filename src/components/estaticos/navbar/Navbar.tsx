@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Box, Avatar, Grid, IconButton } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Typography, AppBar, Toolbar, Menu, MenuItem } from "@material-ui/core";
 import "./Navbar.css";
 import { AccountCircle } from "@material-ui/icons";
@@ -80,8 +80,9 @@ export default function Navbar() {
     function goEditar() {
         navigate(`/atualizarusuario/${userId}`)
     }
-
+    let rota = useLocation();
     var componentsNavbar;
+
     if (token !== "") {
         componentsNavbar = <AppBar position="sticky" className="appbar">
             <Toolbar variant="dense" className="toolbar">
@@ -155,7 +156,43 @@ export default function Navbar() {
             </Toolbar >
         </AppBar >
     } else {
+        if (rota.pathname === "/login" || rota.pathname === "/cadastrousuario" || rota.pathname === "/contato") {
+            componentsNavbar = <AppBar position="sticky" className="appbar">
+                <Toolbar variant="dense" className="toolbar">
+                    <Link to="/">
+                        <Box className="cursorNavbar" >
+                            <img src="https://i.imgur.com/H31Qdmr.png" alt="Nome Horizontal" className="nomeHorizontal" />
+                        </Box>
+                    </Link>
 
+                    <Box display="flex" justifyContent="start">
+                        <Link to="/" className="text-decoration-none">
+                            <Box mx={1.5} className="cursorNavbar">
+                                <Typography variant="h6" color="inherit">
+                                    Pagina Inicial
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Link to="/login" className="text-decoration-none">
+                            <Box mx={1.5} className="cursorNavbar">
+                                <Typography variant="h6" color="inherit">
+                                    Login
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Link to="/cadastrousuario" className="text-decoration-none">
+                            <Box mx={1.5} className="cursorNavbar">
+                                <Typography variant="h6" color="inherit">
+                                    Cadastre-se
+                                </Typography>
+                            </Box>
+                        </Link>
+                    </Box>
+                </Toolbar >
+            </AppBar >
+        }
     }
 
     return (
