@@ -194,3 +194,13 @@ a {
 .icon-valores {
     color: white;
 }
+
+.cardlogo {
+    background-color: #D0EEFF;
+    border-radius: 25px;
+    width: 720px;
+    height: 440px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}

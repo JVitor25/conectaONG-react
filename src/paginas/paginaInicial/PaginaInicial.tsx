@@ -43,7 +43,7 @@ export default function PaginaInicial() {
                         <Box mx={1.5} className="cursor">
                             <Typography variant="h6" color="inherit">
                                 <a className="nav" href="#inicio">
-                                    Ínicio
+                                    Início
                                 </a>
                             </Typography>
                         </Box>

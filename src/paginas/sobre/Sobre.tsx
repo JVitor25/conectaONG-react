@@ -2,7 +2,7 @@ import React from 'react';
 import './Sobre.css';
 import PaginaInicial from '../paginaInicial/PaginaInicial';
 // Componentes react:
-import { Grid, Toolbar, Typography } from "@material-ui/core";
+import { Grid,  Typography } from "@material-ui/core";
 import { Box, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -24,6 +24,7 @@ import matheus from '../../components/imagens/matheus.png';
 import valores from '../../components/imagens/valores.png';
 import missao from '../../components/imagens/missao.png';
 import visao from '../../components/imagens/visao.png';
+import conecta from '../../components/imagens/conecta.png';
 export default function Sobre() {
     return (
         <>
@@ -33,11 +34,15 @@ export default function Sobre() {
                 <Grid container xs={12} id="inicio">
                     <Paper className="bg-titulo">
                         <Grid item xs={5}>
+                            <Box display="flex" className="cardlogo">
+                                <img src={conecta} alt="Logo" className="logo" />
+                            </Box>
+
+                        </Grid>
+                        <Grid item xs={7}>
                             <Typography className="titulo-pagina">
                                 Quem somos?
                             </Typography>
-                        </Grid>
-                        <Grid item xs={7}>
                             <Typography className="texto">
                                 A alta desigualdade na distribuição de renda no Brasil é um problema que aflige grande parte da população. Este fator se torna muito visível quando analisamos o coeficiente de Gini - indice utilizado para aferir a desigualdade econômica de um determinado local. De acordo com o último levantamento desse indice realizado em 2019, o Brasil encontra-se na 9ª colocação mundial integralizando o grupo de países que possuem maiores desigualdades e concentrações de renda.
                             </Typography>
