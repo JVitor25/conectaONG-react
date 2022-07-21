@@ -1,5 +1,5 @@
-import { Box } from '@mui/material'
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Box, Divider } from '@mui/material'
+import { Grid, Typography } from '@material-ui/core';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 
@@ -8,15 +8,29 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GithubIcon from '@material-ui/icons/GitHub';
+import { toast } from 'react-toastify';
+
+function ImplementacaoFutura(){
+    toast.info('Função ainda não implementada', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored',
+    });
+  }
 
 export default function Footer() {
     return (
         <>
-            <Grid container direction='row' spacing={8} className='footer'>
-                <Grid item xs={4}>
+            <Grid container direction='row' justifyContent='center' className='footer'>
+                <Grid item xs={2}>
                     <h3 className='titulo-footer'>O ConectaONG</h3>
-                    <Box className='under-titulo'></Box>
-                    <Link to='' className='text-decorator-none links-footer'>
+                    <Box className='under-titulo'><Divider/></Box>
+                    <Link to="" onClick={ImplementacaoFutura} className='text-decorator-none links-footer'>
                         <Typography variant='h6' component='h6' color='inherit'>
                             FAQ
                         </Typography>
@@ -37,9 +51,9 @@ export default function Footer() {
                         </Typography>
                     </Link>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={2}>
                     <h3 className='titulo-footer'>LinkedIn</h3>
-                    <Box className='under-titulo'></Box>
+                    <Box className='under-titulo'><Divider/></Box>
                     <a href='https://www.linkedin.com/in/jo%C3%A3o-vitor-lima25/' className='text-decorator-none links-footer' target='_blank'>
                         <Typography variant='h6' component='h6' color='inherit'>
                             João Vitor Lima
@@ -71,9 +85,9 @@ export default function Footer() {
                         </Typography>
                     </a>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={2}>
                     <h3 className='titulo-footer'>Redes Sociais</h3>
-                    <Box className='under-titulo'></Box>
+                    <Box className='under-titulo'><Divider/></Box>
                     <Box display="flex" alignItems="center">
                             <a href='' target="_blank">
                                 <FacebookIcon className='icons' />
