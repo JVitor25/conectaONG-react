@@ -2,7 +2,7 @@
 .bg-titulo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center !important;
     background-color: #173b64 !important;
     width: 100%;
     height: 400px;
@@ -23,6 +23,10 @@
     font-size: 4em !important;
     font-weight: bolder !important;
     color: rgb(255, 255, 255);
+    margin-bottom: 1em !important;
+}
+.logo {
+    width: 50% !important;
 }
 
 .MuiGrid-spacing-xs-5>.MuiGrid-item {
@@ -204,4 +208,14 @@ a {
     font-size: 3vh !important;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
     font-weight: bold !important;
+}
+
+.cardlogo {
+    background-color: #D0EEFF;
+    border-radius: 25px;
+    width: 720px;
+    height: 440px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }

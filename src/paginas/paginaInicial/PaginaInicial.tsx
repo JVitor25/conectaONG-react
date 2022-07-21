@@ -9,6 +9,8 @@ import GithubIcon from '@material-ui/icons/GitHub';
 
 // Imagens:
 import joaoLima from '../../components/imagens/joaoLima.png';
+import david from '../../components/imagens/david.png';
+import gabriel from '../../components/imagens/gabriel.png';
 import silvio from '../../components/imagens/silvio.png';
 import humanos from '../../components/imagens/conversa.png';
 import joaoLucas from '../../components/imagens/joaoLucas.png';
@@ -21,6 +23,7 @@ import matheus from '../../components/imagens/matheus.png';
 import valores from '../../components/imagens/valores.png';
 import missao from '../../components/imagens/missao.png';
 import visao from '../../components/imagens/visao.png';
+import conecta from '../../components/imagens/conecta.png';
 
 // CSS:
 import "./PaginaInicial.css";
@@ -76,6 +79,7 @@ export default function PaginaInicial() {
                         </Link>
                     </Box>
                 </Toolbar>
+
             </AppBar>
             {/* Container Geral */}
             <Grid container xs={12}>
@@ -84,11 +88,15 @@ export default function PaginaInicial() {
                 <Grid container xs={12} id="inicio">
                     <Paper className="bg-titulo">
                         <Grid item xs={5}>
+                        <Box display="flex" className="cardlogo">
+                        <img src={conecta} alt="Logo" className="logo" />
+                    </Box>
+
+                        </Grid>
+                        <Grid item xs={7}>
                             <Typography className="titulo-pagina">
                                 Quem somos?
                             </Typography>
-                        </Grid>
-                        <Grid item xs={7}>
                             <Typography className="texto">
                                 A alta desigualdade na distribuição de renda no Brasil é um problema que aflige grande parte da população. Este fator se torna muito visível quando analisamos o coeficiente de Gini - indice utilizado para aferir a desigualdade econômica de um determinado local. De acordo com o último levantamento desse indice realizado em 2019, o Brasil encontra-se na 9ª colocação mundial integralizando o grupo de países que possuem maiores desigualdades e concentrações de renda.
                             </Typography>
@@ -223,14 +231,14 @@ export default function PaginaInicial() {
 
                     <Grid item md={2} className="cartao-time" >
                         <Box>
-                            <img src="https://avatars.githubusercontent.com/u/100104721?v=4" alt="" className="foto-time zoom" />
+                            <img src={david} alt="" className="foto-time zoom" />
                             <Typography className="nome-time">
                                 David Mendes
                             </Typography>
                         </Box>
 
                         <Typography className="texto-time">
-                        Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça.In elementis mé pra quem é amistosis quis leo.
+                            Sempre acreditei que melhorar o meio que se está inserido é uma das coisas mais grandiosas que podemos fazer, fico feliz de usar a tecnologia a favor disso.
                         </Typography>
 
                         <Box className="box">
@@ -240,7 +248,7 @@ export default function PaginaInicial() {
                     </Grid>
                     <Grid item md={2} className="cartao-time" >
                         <Box>
-                            <img src="https://avatars.githubusercontent.com/u/103916287?v=4" alt="" className="foto-time zoom" />
+                            <img src={gabriel} alt="" className="foto-time zoom" />
                             <Typography className="nome-time">
                                 Gabriel Mendes
                             </Typography>
@@ -279,7 +287,7 @@ export default function PaginaInicial() {
                         </Box>
 
                         <Typography className="texto-time">
-                        Um mineiro de 19 anos apaixonado por matemática e resoluções de problemas. Me identifico muito o segmento de indústria de área de tecnologia e por isso eu sei que posso agregar muito ao mundo Tech.
+                            Um mineiro de 19 anos apaixonado por matemática e resoluções de problemas. Me identifico muito o segmento de indústria de área de tecnologia e por isso eu sei que posso agregar muito ao mundo Tech.
                         </Typography>
                         <Box className="box">
                             <a href="https://github.com/JVitor25" target='blank'><GithubIcon className="github-icone zoom" /></a>
@@ -307,7 +315,7 @@ export default function PaginaInicial() {
                         <Box>
                             <img src={silvio} alt="" className="foto-time zoom" />
                             <Typography className="nome-time">
-                                Silvio Maurício
+                                Silvio Mauricio
                             </Typography>
                         </Box>
 
