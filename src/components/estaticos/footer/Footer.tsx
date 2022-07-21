@@ -79,7 +79,7 @@ export default function Footer() {
                             Gabriel Mendes
                         </Typography>
                     </a>
-                    <a href='https://github.com/silvoncio' className='text-decorator-none links-footer' target='_blank'>
+                    <a href='https://www.linkedin.com/in/silvio-mauricio-da-silva-junior-b30944244' className='text-decorator-none links-footer' target='_blank'>
                         <Typography variant='h6' component='h6' color='inherit'>
                             Silvio Mauricio
                         </Typography>

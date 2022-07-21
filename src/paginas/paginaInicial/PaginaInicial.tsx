@@ -324,7 +324,7 @@ export default function PaginaInicial() {
                         </Typography>
                         <Box className="box">
                             <a href="https://github.com/silvoncio" target='blank'><GithubIcon className="github-icone zoom" /></a>
-                            <a href="" target='blank'><LinkedInIcon className="icones zoom" /></a>
+                            <a href="https://www.linkedin.com/in/silvio-mauricio-da-silva-junior-b30944244" target='blank'><LinkedInIcon className="icones zoom" /></a>
                         </Box>
                     </Grid>
                 </Grid>
