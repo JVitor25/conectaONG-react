@@ -26,25 +26,25 @@ function AtualizarUsuario() {
 
     useEffect(() => {
         if (token === "") {
-          toast.info('Você precisa estar logado.', {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'colored',
+            toast.info('Você precisa estar logado.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
             });
-          navigate("/login")
+            navigate("/login")
         }
-      }, [token])    
+    }, [token])
 
     useEffect(() => {
         if (id !== undefined) {
-          findById(id)
+            findById(id)
         }
-      }, [id]);
+    }, [id]);
 
     async function findById(id: string) {
         buscarId(`/usuarios/${id}`, setUser, {
@@ -56,8 +56,52 @@ function AtualizarUsuario() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        user.postagem=null
-        if (confirmarSenha === user.senha) {
+        if (user.senha === "" || user.nome === "" || user.usuario === "") {
+            toast.warn('Possui campos vazios', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            })
+        } else if (user.usuario.includes("@") === false || user.usuario.includes(".com") === false) {
+            toast.warn('Formato esperado no campo e-mail: email@email.com', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            })
+        } else if (user.foto.length >= 255) {
+            toast.warn('O link da foto deve ter menos que 255 caracteres.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            })
+        } else if (user.senha.length < 8) {
+            toast.warn('A senha deve conter ao menos 8 digitos', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            })
+        } else if (confirmarSenha === user.senha) {
+            user.postagem = null
             put(`/usuarios/atualizar`, user, setUser, {
                 headers: {
                     'Authorization': token
@@ -72,10 +116,10 @@ function AtualizarUsuario() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
             navigate("/feed")
         } else {
-            toast.warn('As senhas devem ser as mesmas.', {
+            toast.warn('As senhas não coincidem.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -84,7 +128,7 @@ function AtualizarUsuario() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
         }
     }
 

@@ -44,9 +44,53 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha === user.senha) {
+        if (user.senha === "" || user.nome === "" || user.usuario === "") {
+            toast.warn('Possui campos vazios', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            })
+        } else if (user.usuario.includes("@") === false || user.usuario.includes(".com") === false) {
+            toast.warn('Formato esperado no campo e-mail: email@email.com', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            })
+        } else if (user.foto.length >= 255) {
+            toast.warn('O link da foto deve ter menos que 255 caracteres.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            })
+        } else if (user.senha.length < 8) {
+            toast.warn('A senha deve conter ao menos 8 digitos', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            })
+        } else if (confirmarSenha === user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            toast.info('Usuário cadastrado.', {
+            toast.success('Usuário cadastrado.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -55,9 +99,9 @@ function CadastroUsuario() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
         } else {
-            toast.info('Dados inconsistentes, verifique as informações de cadastro.', {
+            toast.warn('As senhas não coincidem.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -66,7 +110,7 @@ function CadastroUsuario() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
         }
     }
 

@@ -57,7 +57,7 @@ export default function CadastroPost() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                });
+            });
             navigate("/login")
         }
     }, [token]);
@@ -105,14 +105,9 @@ export default function CadastroPost() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-
-        if (id !== undefined) {
-            put(`/postagem`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            toast.success('Postagem atualizada com sucesso!', {
+        console.log(postagem)
+        if (postagem.tema?.tema === "" || tema.tema==="") {
+            toast.warn('Por favor, insira um tema.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -121,26 +116,43 @@ export default function CadastroPost() {
                 draggable: true,
                 progress: undefined,
                 theme: 'colored',
-                });
+            });
         } else {
-            console.log(postagem)
-            post(`/postagem`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            toast.success('Postagem cadastrada.', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'colored',
+            if (id !== undefined) {
+                put(`/postagem`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                toast.success('Postagem atualizada com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'colored',
                 });
+            } else {
+                post(`/postagem`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                toast.success('Postagem cadastrada.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'colored',
+                });
+            }
+            back()
         }
-        back()
     }
 
     let rota = useLocation();
